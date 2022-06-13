@@ -7,13 +7,13 @@ import { HeartIcon as HeartIconFilled } from "@heroicons/react/solid"
 
 
 // component for a single post
-const Post = ({id, username, userImg, img, caption}) => {
+const Post = ({id, username, img, caption}) => {
     return (
         <div className="bg-white my-7 border rounded-sm">
            
             
             {/* img */}
-            <img src={img} className="object-cover w-full" alt=""/>
+            <img src={img} className="object-cover h-68 w-96" alt=""/>
             {/* Buttons */}
             <div className="flex space-x-4 px-4 pt-4">
                 <HeartIcon className="h-7 hove:scale-125 curor-pointer transition-all duration-150 ease-out"/>
