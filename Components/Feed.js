@@ -1,8 +1,13 @@
+import Posts from './Posts'
+
+// Shows all the data in the feed
 const Feed = () => {
     return (
-        <div>
-            <p>Feed</p>
-        </div>
+        <main className="flex justify-center">
+            <section>
+                <Posts />
+            </section>
+        </main>
     )
 }
 
