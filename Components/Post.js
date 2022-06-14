@@ -15,6 +15,7 @@ const Post = ({id, username, img, caption}) => {
     const [comments, setComments] = useState([])
     const [likes, setLikes] = useState([])
     const [hasLiked, setHasLiked] = useState(false)
+    const [hidden, setHidden] = useState('')
 
     useEffect(() =>
     {
@@ -50,7 +51,9 @@ const Post = ({id, username, img, caption}) => {
         }
         
     }
-
+    const hideVideo = () => {
+        setHidden('hidden')
+    }
     
 
     const sendComment = async(e) => {
@@ -70,7 +73,10 @@ const Post = ({id, username, img, caption}) => {
            
             
             {/* img */}
-            <img src={img} className="object-cover h-68 w-96" alt=""/>
+            <img src={img} className="object-cover h-68 w-96" alt="" onLoad={hideVideo}/>
+            <video className={`object-cover h-68 w-96 ${hidden}`} controls="controls" id="video">
+                <source src={img} type="video/mp4"></source>
+            </video>
             {/* Buttons */}
             <div className="flex space-x-4 px-4 pt-4">
                 {hasLiked ?
