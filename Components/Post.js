@@ -103,7 +103,6 @@ const Post = ({id, username, img, caption}) => {
                         </div>
                     ))}
                 </div>
-
             )}
 
             {/* Input Box */}
