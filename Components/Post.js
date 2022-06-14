@@ -75,12 +75,12 @@ const Post = ({id, username, img, caption}) => {
     }
     
     return (
-        <div className="bg-white my-7 border rounded-sm">
+        <div className="bg-white my-7 border rounded-sm w-96">
            
             
             {/* img */}
-            <img src={img} className="object-cover h-68 w-96" alt="" onLoad={hideVideo}/>
-            <video className={`object-cover h-68 w-96 ${hidden}`} controls="controls" id="video">
+            <img src={img} className="object-fill h-68 w-96" alt="" onLoad={hideVideo}/>
+            <video className={`object-contain h-68 w-96 ${hidden}`} controls="controls" id="video">
                 <source src={img} type="video/mp4"></source>
             </video>
             {/* Buttons */}
@@ -93,16 +93,16 @@ const Post = ({id, username, img, caption}) => {
                 <ChatIcon onClick={focusComment} className="h-7 hove:scale-125 curor-pointer transition-all duration-150 ease-out"/>
             </div>
             {/* Caption */}
-            <p className="p-5 truncate">
+            <p className="p-5">
                 {likes.length > 0 && (
                     <p className="font-bold mb-1">{likes.length} likes</p>
                 )}
                 <span className="font-bold mr-2 text-gray-800">{username}</span>
-                {caption}
+                <span>{caption}</span>
             </p>
             {/* Comments */}
             {comments.length > 0 && (
-                <div className="ml-10 h-20 overflow-y-scroll scrollbar-hide">
+                <div className="ml-5 h-20 overflow-y-scroll scrollbar-hide">
                     {comments.map((comment) => (
                         <div key={comment.id} className="flex items-center space-x-2 mb-3">
                             <p className="text-sm flex-1">
@@ -130,7 +130,7 @@ const Post = ({id, username, img, caption}) => {
                  disabled={!comment.trim()}
                  type='submit'
                  onClick={sendComment}
-                 className="font-semibold text-blue-400">Post</button>
+                 className="font-semibold text-blue-400 mr-3 hover:text-black">Post</button>
             </form>
         </div>
     )
