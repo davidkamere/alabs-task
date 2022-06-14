@@ -1,15 +1,15 @@
 
 import Head from 'next/head'
-import Header from '../components/Header'
-import Feed from '../components/Feed'
-import Footer from '../components/Footer'
-import Modal from '../components/Modal'
-import Loading from '../components/Loading'
+import Header from '../Components/Header'
+import Feed from '../Components/Feed'
+import Footer from '../Components/Footer'
+import Modal from '../Components/Modal'
+import Loading from '../Components/Loading'
 import { useSession } from 'next-auth/react'
 import { useRouter } from "next/router"
 
 const Home = () => {
-  const { data: session, status } = useSession(null)
+  const { data: session, status } = useSession()
   const router = useRouter()
 
   if (status === "loading") {
