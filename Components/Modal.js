@@ -99,8 +99,8 @@ const Modal = () => {
                                 : 
                                 <div
                                     onClick={() => filePickerRef.current.click()}
-                                    className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-red-100 cursor-pointer">
-                                    <CameraIcon className="h-10 w-10 text-red-600" aria-hidden="true"/>
+                                    className="mx-auto flex items-center justify-center h-20 w-20 rounded-full bg-red-100 cursor-pointer">
+                                    <CameraIcon className="h-12 w-12 text-red-600" aria-hidden="true"/>
                                 </div>
                                 }
                                 
@@ -110,7 +110,7 @@ const Modal = () => {
                                             as="h3"
                                             className="text-lg leading-6 font-medium text-gray-900"
                                         >
-                                            Upload a photo
+                                            Upload content
                                         </Dialog.Title>
                                         <div>
                                             <input 
@@ -120,10 +120,11 @@ const Modal = () => {
                                         </div>
                                         <div className="mt-2">
                                             <input
-                                                className="border-none focus:ring-0 w-full text-center"
+                                                className="border-none focus:ring-0 w-full text-center bg-gray-50"
                                                 type="text"
+                                                required
                                                 ref={captionRef}
-                                                placeholder="Please enter a caption"
+                                                placeholder="Please enter a caption..."
                                             />
                                         </div>
                                     </div>

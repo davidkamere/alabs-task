@@ -2,7 +2,7 @@ import { ChatIcon, HeartIcon } from "@heroicons/react/outline"
 
 import { HeartIcon as HeartIconFilled } from "@heroicons/react/solid"
 import { addDoc, deleteDoc, doc, serverTimestamp, setDoc } from "firebase/firestore"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { collection, onSnapshot, orderBy, query } from 'firebase/firestore'
 import { db } from '../firebase'
 import Moment from "react-moment"
@@ -11,6 +11,7 @@ import { useSession } from "next-auth/react"
 // component for a single post
 const Post = ({id, username, img, caption}) => {
     const { data: session } = useSession()
+    const addComment = useRef(null)
     const [comment, setComment] = useState('')
     const [comments, setComments] = useState([])
     const [likes, setLikes] = useState([])
@@ -68,6 +69,11 @@ const Post = ({id, username, img, caption}) => {
             timestamp: serverTimestamp()
         })
     }
+
+    const focusComment = () => {
+        addComment.current.focus()
+    }
+    
     return (
         <div className="bg-white my-7 border rounded-sm">
            
@@ -84,7 +90,7 @@ const Post = ({id, username, img, caption}) => {
                 :
                     <HeartIcon onClick={likePost} className="h-7 hove:scale-125 curor-pointer transition-all duration-150 ease-out"/>
                 }
-                <ChatIcon className="h-7 hove:scale-125 curor-pointer transition-all duration-150 ease-out"/>
+                <ChatIcon onClick={focusComment} className="h-7 hove:scale-125 curor-pointer transition-all duration-150 ease-out"/>
             </div>
             {/* Caption */}
             <p className="p-5 truncate">
@@ -101,7 +107,7 @@ const Post = ({id, username, img, caption}) => {
                         <div key={comment.id} className="flex items-center space-x-2 mb-3">
                             <p className="text-sm flex-1">
                                 <span className="text-blue-400 font-bold pr-2">{comment.data().username}</span>
-                                {comment.data().comment}
+                                <span className="m-auto">{comment.data().comment}</span>
                             </p>
                             <Moment fromNow className="pr-5 text-xs text-gray-400">
                                 <span >{comment.data().timestamp?.toDate()}</span>
@@ -115,6 +121,7 @@ const Post = ({id, username, img, caption}) => {
             <form className="flex items-center p-2">
                 <input
                  type="text"
+                 ref={addComment}
                  value={comment}
                  onChange={e => setComment(e.target.value)}
                  placeholder="Add a comment..."

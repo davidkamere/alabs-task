@@ -4,6 +4,7 @@ import Header from '../Components/Header'
 import Feed from '../Components/Feed'
 import Footer from '../Components/Footer'
 import Modal from '../Components/Modal'
+import Loading from '../Components/Loading'
 import { useSession } from 'next-auth/react'
 import { useRouter } from "next/router"
 
@@ -12,7 +13,7 @@ const Home = () => {
   const router = useRouter()
 
   if (status === "loading") {
-    return <p>Loading...</p>
+    return <Loading />
   }
 
   if (status === "unauthenticated") {
@@ -27,7 +28,7 @@ const Home = () => {
       </Head>
       
       {/* Header with Log out  */}
-      <Header />
+      {session && <Header />}
 
       {/* Feed */}
       <Feed />
@@ -36,9 +37,9 @@ const Home = () => {
       <Modal />
 
       {/* Sticky Footer */}
-
-      <Footer />
-      
+      <div className='sticky bottom-0 bg-white opacity-90'>
+        <Footer />
+      </div>
 
     </div>
   )
