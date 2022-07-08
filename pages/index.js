@@ -23,7 +23,7 @@ const Home = () => {
   return (
     <div className="">
       <Head>
-        <title>Adanian Labs Test</title>
+        <title>lab</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       
