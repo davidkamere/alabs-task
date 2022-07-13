@@ -7,6 +7,7 @@ import { collection, onSnapshot, orderBy, query } from 'firebase/firestore'
 import { db } from '../firebase'
 import Moment from "react-moment"
 import { useSession } from "next-auth/react"
+import Image from "next/future/image"
 
 
 // component for a single post
@@ -77,7 +78,7 @@ const Post = ({ id, username, img, caption }) => {
     return (
         <div className="my-7">
             <div className="my-3 shadow-2xl">
-                <img src={img} className="object-fill h-68 w-96" alt="" onLoad={hideVideo} />
+                <Image src={img} width={384} height={400} className="object-fill h-68 w-96" alt="" onLoad={hideVideo} />
                 <video className={`object-contain h-68 w-96 ${hidden}`} controls="controls" id="video">
                     <source src={img} type="video/mp4"></source>
                 </video>
