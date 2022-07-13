@@ -23,8 +23,8 @@ const Home = () => {
   return (
     <div className="">
       <Head>
-        <title>lab</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>yakuti.jpg</title>
+        <link rel="icon" href="/stone.ico" />
       </Head>
       
       {/* Header with Log out  */}
