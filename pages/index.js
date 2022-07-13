@@ -37,7 +37,7 @@ const Home = () => {
       <Modal />
 
       {/* Sticky Footer */}
-      <div className='sticky bottom-0 bg-white opacity-90'>
+      <div className='sticky bottom-0 bg-white opacity-90 bg-opacity-20 backdrop-blur-lg'>
         <Footer />
       </div>
 

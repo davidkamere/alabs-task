@@ -16,7 +16,7 @@ const Post = ({id, username, img, caption}) => {
     const [comments, setComments] = useState([])
     const [likes, setLikes] = useState([])
     const [hasLiked, setHasLiked] = useState(false)
-    const [hidden, setHidden] = useState('')
+    const [hidden, setHidden] = useState('hidden')
 
     useEffect(() =>
     {
@@ -75,14 +75,17 @@ const Post = ({id, username, img, caption}) => {
     }
     
     return (
-        <div className="bg-white my-7 border rounded-sm w-96">
-           
-            
-            {/* img */}
+        <div className="my-7">
+        <div className="my-2 shadow-2xl">
             <img src={img} className="object-fill h-68 w-96" alt="" onLoad={hideVideo}/>
             <video className={`object-contain h-68 w-96 ${hidden}`} controls="controls" id="video">
                 <source src={img} type="video/mp4"></source>
             </video>
+        </div>
+
+        <div className="bg-white border rounded-sm border-[#AAF0C1] border-opacity-25 w-96">
+            {/* img */}
+            
             {/* Buttons */}
             <div className="flex space-x-4 px-4 pt-4">
                 {hasLiked ?
@@ -104,7 +107,7 @@ const Post = ({id, username, img, caption}) => {
             {comments.length > 0 && (
                 <div className="ml-5 h-20 overflow-y-scroll scrollbar-hide">
                     {comments.map((comment) => (
-                        <div key={comment.id} className="flex items-center space-x-2 mb-3">
+                        <div key={comment.id} className="flex items-center space-x-2">
                             <p className="text-sm flex-1">
                                 <span className="text-blue-400 font-bold pr-2">{comment.data().username}</span>
                                 <span className="m-auto">{comment.data().comment}</span>
@@ -125,13 +128,14 @@ const Post = ({id, username, img, caption}) => {
                  value={comment}
                  onChange={e => setComment(e.target.value)}
                  placeholder="Add a comment..."
-                 className="border-none flex-1 focus:ring-0 outline-none"/>
+                 className="border-none flex-1 focus:ring-0 outline-none bg-opacity-0 bg-white"/>
                 <button
                  disabled={!comment.trim()}
                  type='submit'
                  onClick={sendComment}
                  className="font-semibold text-blue-400 mr-3 hover:text-black">Post</button>
             </form>
+        </div>
         </div>
     )
 }
