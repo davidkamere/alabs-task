@@ -13,10 +13,10 @@ const Header = () => {
 
     return (
    
-        <div className="py-5 px-12 shadow-sm border-b bg-white bg-opacity-20 backdrop-blur-lg sticky top-0 z-50 ">
+        <div className="pt-5 px-8 sticky top-0 z-50 ">
             <div className="flex justify-between items-center">
                 <p>Welcome, <span className="font-bold mr-2 text-gray-800">{session.user.username}</span></p>
-                <button onClick={signInPage} className="py-2 px-4 bg-black hover:bg-red-500 rounded-lg text-white">Logout</button>
+                <button onClick={signInPage} className="py-2 px-4 bg-gradient-to-r from-[#f2cbac] to-[#bac9c9] rounded-lg text-white">Sign out</button>
             </div>
             
             

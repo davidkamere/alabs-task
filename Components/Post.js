@@ -105,11 +105,11 @@ const Post = ({id, username, img, caption}) => {
             </p>
             {/* Comments */}
             {comments.length > 0 && (
-                <div className="ml-5 h-20 overflow-y-scroll scrollbar-hide">
+                <div className="ml-5 h-14 overflow-y-scroll scrollbar-hide">
                     {comments.map((comment) => (
-                        <div key={comment.id} className="flex items-center space-x-2">
+                        <div key={comment.id} className="flex items-center">
                             <p className="text-sm flex-1">
-                                <span className="text-blue-400 font-bold pr-2">{comment.data().username}</span>
+                                <span className="text-[#bac9c9] font-bold pr-2">{comment.data().username}</span>
                                 <span className="m-auto">{comment.data().comment}</span>
                             </p>
                             <Moment fromNow className="pr-5 text-xs text-gray-400">
@@ -121,7 +121,7 @@ const Post = ({id, username, img, caption}) => {
             )}
 
             {/* Input Box */}
-            <form className="flex items-center p-2">
+            <form className="flex items-center p-2 ">
                 <input
                  type="text"
                  ref={addComment}
@@ -133,7 +133,7 @@ const Post = ({id, username, img, caption}) => {
                  disabled={!comment.trim()}
                  type='submit'
                  onClick={sendComment}
-                 className="font-semibold text-blue-400 mr-3 hover:text-black">Post</button>
+                 className="font-semibold text-[#336934] mr-3 hover:text-black">Post</button>
             </form>
         </div>
         </div>
