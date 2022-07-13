@@ -78,7 +78,7 @@ const Post = ({ id, username, img, caption }) => {
     return (
         <div className="my-7">
             <div className="my-3 shadow-2xl">
-                <Image src={img} width={384} height={400} className="object-fill h-68 w-96" alt="" onLoad={hideVideo} />
+                <Image src={img} width={384} height={500} className="object-fill h-68 w-96" alt="" onLoad={hideVideo} />
                 <video className={`object-contain h-68 w-96 ${hidden}`} controls="controls" id="video">
                     <source src={img} type="video/mp4"></source>
                 </video>
