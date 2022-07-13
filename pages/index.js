@@ -30,14 +30,16 @@ const Home = () => {
       {/* Header with Log out  */}
       {session && <Header />}
 
+      
       {/* Feed */}
+      
       <Feed />
 
       {/* Upload Modal */}
       <Modal />
 
       {/* Sticky Footer */}
-      <div className='pl-5 mx-20 sticky bottom-0 bg-white opacity-95 bg-opacity-20 backdrop-blur-lg'>
+      <div className='sticky bottom-0 bg-white opacity-95 bg-opacity-20 backdrop-blur-lg'>
         <Footer />
       </div>
 

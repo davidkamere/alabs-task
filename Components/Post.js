@@ -96,13 +96,13 @@ const Post = ({id, username, img, caption}) => {
                 <ChatIcon onClick={focusComment} className="h-7 hove:scale-125 curor-pointer transition-all duration-150 ease-out"/>
             </div>
             {/* Caption */}
-            <p className="p-5">
+            <div className="p-5">
                 {likes.length > 0 && (
                     <p className="font-bold mb-1">{likes.length} likes</p>
                 )}
                 <span className="font-bold mr-2 text-gray-800">{username}</span>
                 <span>{caption}</span>
-            </p>
+            </div>
             {/* Comments */}
             {comments.length > 0 && (
                 <div className="ml-5 h-14 overflow-y-scroll scrollbar-hide">
