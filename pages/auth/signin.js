@@ -17,7 +17,7 @@ export default function SignIn({ providers }) {
         <div className="mt-20">
           {Object.values(providers).map((provider) => (
             <div key={provider.name}>
-              <button className="p-3 bg-black rounded-lg text-white bg-gradient-to-r from-[#336934] to-[#737238]"
+              <button className="p-3 shadow-xl shadow-lime-900  rounded-lg text-black font-bold bg-gradient-to-r from-[#f2cbac] to-[#bac9c9] "
                       onClick={() => signIntoProvider(provider.id, {callbackUrl: '/'})}
               >
                 Sign in with {provider.name}
