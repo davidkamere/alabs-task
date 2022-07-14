@@ -1,10 +1,13 @@
 import { getProviders, signIn as signIntoProvider } from "next-auth/react"
 import { ArrowSmDownIcon } from "@heroicons/react/solid"
+import Image from "next/future/image"
+import backG from "../../public/stone.png"
 
 export default function SignIn({ providers }) {
   return (
     <>
-      <div className="flex flex-col bg-signin bg-cover bg-center bg-no-repeat items-center jusifty-center min-h-screen py-2 px-14 text-center">
+      <Image src={backG} alt="" layout="fill" className="fixed -z-10 min-h-screen"/>
+      <div className="flex flex-col items-center jusifty-center py-2 px-14 text-center">
         <div className="mt-32">
           <p className="font-xs italic">Sign in to create, discover and connect with the community.</p>
           <p className="font-xs italic">Google accounts allow us to personalize your page.</p>

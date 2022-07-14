@@ -128,7 +128,7 @@ const Post = ({ id, username, img, caption }) => {
                         ref={addComment}
                         value={comment}
                         onChange={e => setComment(e.target.value)}
-                        placeholder="Add a comment..."
+                        placeholder="Say sumn..."
                         className="border-none flex-1 focus:ring-0 outline-none bg-opacity-0 bg-white" />
                     <button
                         disabled={!comment.trim()}
