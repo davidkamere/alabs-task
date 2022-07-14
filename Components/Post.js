@@ -78,7 +78,7 @@ const Post = ({ id, username, img, caption }) => {
     return (
         <div className="my-7">
             <div className="my-3 shadow-2xl">
-                <Image src={img} width={384} height={500} className="object-fill h-68 w-96" alt="" onLoad={hideVideo} />
+                <Image src={img} width={384} height={500} className="object-fill w-96" alt="" onLoad={hideVideo} />
                 <video className={`object-contain h-68 w-96 ${hidden}`} controls="controls" id="video">
                     <source src={img} type="video/mp4"></source>
                 </video>
@@ -128,7 +128,7 @@ const Post = ({ id, username, img, caption }) => {
                         ref={addComment}
                         value={comment}
                         onChange={e => setComment(e.target.value)}
-                        placeholder="Say sumn..."
+                        placeholder="Add a Comment..."
                         className="border-none flex-1 focus:ring-0 outline-none bg-opacity-0 bg-white" />
                     <button
                         disabled={!comment.trim()}
