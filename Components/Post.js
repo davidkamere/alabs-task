@@ -88,19 +88,23 @@ const Post = ({ id, username, img, caption }) => {
                 {/* img */}
 
                 {/* Buttons */}
-                <div className="flex space-x-4 px-4 pt-4">
-                    {hasLiked ?
-                        <HeartIconFilled onClick={likePost} className="h-7 hove:scale-125 curor-pointer transition-all duration-150 ease-out text-red-500" />
-                        :
-                        <HeartIcon onClick={likePost} className="h-7 hove:scale-125 curor-pointer transition-all duration-150 ease-out" />
-                    }
-                    <ChatIcon onClick={focusComment} className="h-7 hove:scale-125 curor-pointer transition-all duration-150 ease-out" />
+                <div className="flex justify-between px-4 pt-4 mb-2">
+                    <div>
+                        {hasLiked ?
+                            <HeartIconFilled onClick={likePost} className="h-6 hover:scale-125 curor-pointer transition-all duration-150 ease-out text-black" />
+                            :
+                            <HeartIcon onClick={likePost} className="h-6 hover:scale-125 curor-pointer transition-all duration-150 ease-out" />
+                        }
+                    </div>
+                    <div>
+                        {likes.length > 0 && (
+                            <p className="font-bold text-black">{likes.length} Likes</p>
+                        )}
+                    </div>
                 </div>
                 {/* Caption */}
                 <div className="p-5">
-                    {likes.length > 0 && (
-                        <p className="font-bold mb-1">{likes.length} likes</p>
-                    )}
+                    
                     <span className="font-bold mr-2 text-gray-800">{username}</span>
                     <span>{caption}</span>
                 </div>
