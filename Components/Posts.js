@@ -20,9 +20,11 @@ const Posts = () => {
     }, [db])
 
     return( 
-        <div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center place-items-center items-end">
             {posts.map(post => (
-                <Post key={post.id} id={post.id} username={post.data().username} img={post.data().image} caption={post.data().caption}/>
+                <div>
+                    <Post key={post.id} id={post.id} username={post.data().username} img={post.data().image} caption={post.data().caption}/>
+                </div>
             ))}
            
         </div>

@@ -21,7 +21,7 @@ const Home = () => {
   }
 
   return (
-    <div className="">
+    <div className="bg-white">
       <Head>
         <title>yakuti.jpg</title>
         <link rel="icon" href="/stone.ico" />
@@ -39,7 +39,7 @@ const Home = () => {
       <Modal />
 
       {/* Sticky Footer */}
-      <div className='sticky bottom-0 bg-white opacity-95 bg-opacity-20 backdrop-blur-lg'>
+      <div className='sticky bottom-0  opacity-95 bg-opacity-20 backdrop-blur-lg'>
         <Footer />
       </div>
 
