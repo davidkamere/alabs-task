@@ -23,7 +23,7 @@ const Home = () => {
   return (
     <div className="bg-white">
       <Head>
-        <title>yakuti.jpg</title>
+        <title>PCHA</title>
         <link rel="icon" href="/stone.ico" />
       </Head>
       
@@ -34,7 +34,7 @@ const Home = () => {
       {/* Feed */}
       
       <Feed />
-
+      
       {/* Upload Modal */}
       <Modal />
 

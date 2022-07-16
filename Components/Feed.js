@@ -3,7 +3,7 @@ import Posts from './Posts'
 // Shows all the data in the feed
 const Feed = () => {
     return (
-        <main >
+        <main>
             <section>
                 <Posts />
             </section>

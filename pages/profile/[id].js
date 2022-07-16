@@ -1,0 +1,49 @@
+import { useState, useEffect } from "react"
+import Post from "../../Components/Post"
+import Header from "../../Components/Header"
+import { collection, onSnapshot, orderBy, query, where } from 'firebase/firestore'
+import { db } from '../../firebase'
+import { useRouter } from 'next/router'
+
+
+function Profile (props) {
+    const router = useRouter()
+    const [posts, setPosts] = useState([])
+    const { id } = router.query
+
+    useEffect(() =>
+    {
+        
+        return onSnapshot(
+            query(
+                collection(db, "posts"),
+                where("username", "==", id),
+                orderBy('timestamp', 'desc')
+            ),
+            snapshot => {setPosts(snapshot.docs)}
+        )
+    }, [db])
+
+
+    return( 
+        <>
+            <Header />
+            <div className="grid grid-cols-1 md:p-5 md:grid-cols-2 lg:grid-cols-4 justify-items-center items-end">
+                {posts.map(post => (
+                    <div key={post.id}>
+                        <Post  id={post.id} username={null} img={post.data().image} caption={post.data().caption}/>
+                    </div>
+                ))}
+            
+            </div>
+        </>
+    )
+}
+
+export default Profile
+
+export async function getServerSideProps(context) {
+    return {
+      props: {}, // will be passed to the page component as props
+    };
+  }

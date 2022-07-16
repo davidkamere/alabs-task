@@ -1,5 +1,5 @@
 import { ChatIcon, HeartIcon } from "@heroicons/react/outline"
-
+import { useRouter } from "next/router"
 import { HeartIcon as HeartIconFilled } from "@heroicons/react/solid"
 import { addDoc, deleteDoc, doc, serverTimestamp, setDoc } from "firebase/firestore"
 import { useEffect, useRef, useState } from "react"
@@ -8,7 +8,7 @@ import { db } from '../firebase'
 import Moment from "react-moment"
 import { useSession } from "next-auth/react"
 import Image from "next/future/image"
-
+import Link from 'next/link'
 
 // component for a single post
 const Post = ({ id, username, img, caption }) => {
@@ -75,11 +75,12 @@ const Post = ({ id, username, img, caption }) => {
         addComment.current.focus()
     }
 
+
     return (
-        <div className="my-7 md:w-56">
+        <div className="my-7 md:w-56 ">
             <div className="my-3">
                 <Image src={img} width={384} height={500} className="object-fill h-auto w-96 md:w-56" alt="" onLoad={hideVideo} />
-                <video className={`object-contain h-68 w-96 ${hidden}`} controls="controls" id="video">
+                <video className={`object-contain h-68 w-96 ${hidden}`} controls="controls" id="video" onLoad={() => setHidden('')}>
                     <source src={img} type="video/mp4"></source>
                 </video>
             </div>
@@ -88,24 +89,24 @@ const Post = ({ id, username, img, caption }) => {
                 {/* img */}
 
                 {/* Buttons */}
-                <div className="flex justify-between px-4 pt-4 mb-2 md:px-0 ">
+                {username && <div className="flex justify-between px-4 pt-4 mb-2 md:px-0 ">
                     <div>
                         {hasLiked ?
-                            <HeartIconFilled onClick={likePost} className="h-6 hover:scale-125 curor-pointer transition-all duration-150 ease-out text-[#adda89]" />
+                            <HeartIconFilled onClick={likePost} className="h-6 hover:scale-125 curor-pointer transition-all duration-150 ease-out" />
                             :
                             <HeartIcon onClick={likePost} className="h-6 hover:scale-125 curor-pointer transition-all duration-150 ease-out" />
                         }
                     </div>
                     <div>
                         {likes.length > 0 && (
-                            <p className="font-bold text-[#adda89]">{likes.length} {likes.length > 1 ? <span>Likes</span> : <span>Like</span>}</p>
+                            <p className="font-bold">{likes.length} {likes.length > 1 ? <span>Likes</span> : <span>Like</span>}</p>
                         )}
                     </div>
-                </div>
+                </div>}
                 {/* Caption */}
                 <div className="p-5 md:px-0">
                     
-                    <span className="font-bold mr-2 text-gray-800 ">{username}</span>
+                    {username && <Link href={`/profile/${username}`}><span className="font-bold mr-2 text-gray-800 hover:cursor-pointer">{username}</span></Link>}
                     <span className="">{caption}</span>
                 </div>
                 {/* Comments */}
