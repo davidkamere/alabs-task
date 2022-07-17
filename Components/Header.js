@@ -50,16 +50,16 @@ const Header = (props) => {
                     </svg>
                     </div>
                     <ul className="flex flex-col items-center justify-between min-h-[250px]">
-                        <li className="mt-0 mb-7 uppercase">
+                        <li className="mt-0 mb-8 uppercase">
                             <Link href="/">HOME</Link>
                         </li>
-                        <li className="my-7 uppercase">
+                        <li className="my-8 uppercase">
                             <Link href={`/profile/${session?.user?.username}`}>MY PHOTOS</Link>
                         </li>
-                        <li className="my-7 uppercase">
+                        <li className="my-8 uppercase">
                             <Link href="/places"><span className="text-gray-400">PLACES(BETA)</span></Link>
                         </li>
-                        <li className="my-7">
+                        <li className="my-8">
                             <button onClick={signInPage} className="py-2 px-3 bg-gradient-to-r from-[#adda89] to-[#fdf9a1] rounded-lg text-sm">SIGN OUT</button>
                         </li>
                     </ul>
