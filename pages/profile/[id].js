@@ -8,6 +8,7 @@ import { db } from '../../firebase'
 import { useRouter } from 'next/router'
 
 
+
 function Profile (props) {
     const router = useRouter()
     const [posts, setPosts] = useState([])
@@ -42,6 +43,7 @@ function Profile (props) {
                 ))}
             
             </div>
+           
         </>
     )
 }
