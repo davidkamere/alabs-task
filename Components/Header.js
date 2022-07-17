@@ -27,7 +27,7 @@ const Header = (props) => {
                     onClick={() => setIsNavOpen((prev) => !prev)}
                 >
                     <span className="block h-0.5 w-7 bg-[#adda89]"></span>
-                    <span className="block h-0.5 w-7 bg-[#fdf9a1]"></span>
+                    <span className="block h-0.5 w-7 bg-[#adda89]"></span>
                     <span className="block h-0.5 w-7 bg-[#adda89]"></span>
                 </div>
         

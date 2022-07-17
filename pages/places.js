@@ -24,7 +24,7 @@ function Places () {
 
             <div className="flex flex-wrap gap-6 justify-center my-14">
                 {videos.map(video => (
-                    windowObj && <div className="mx-8"><ReactPlayer id={video.id} url={video.url} width="460px" /></div>
+                    windowObj && <div className="mx-8"><ReactPlayer id={video.id} url={video.url} width="370px" /></div>
                 ))}
                 
             </div>
