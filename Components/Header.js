@@ -50,7 +50,7 @@ const Header = (props) => {
                     </svg>
                     </div>
                     <ul className="flex flex-col items-center justify-between min-h-[250px]">
-                        <li className="my-7 uppercase">
+                        <li className="mt-0 mb-7 uppercase">
                             <Link href="/">HOME</Link>
                         </li>
                         <li className="my-7 uppercase">
