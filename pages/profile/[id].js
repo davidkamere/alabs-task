@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react"
+
+import Head from 'next/head'
 import Post from "../../Components/Post"
 import Header from "../../Components/Header"
 import { collection, onSnapshot, orderBy, query, where } from 'firebase/firestore'
@@ -27,6 +29,10 @@ function Profile (props) {
 
     return( 
         <>
+            <Head>
+                <title>PCHA</title>
+                <link rel="icon" href="/floral.ico" />
+            </Head>
             <Header />
             <div className="grid grid-cols-1 md:p-5 md:grid-cols-2 lg:grid-cols-4 justify-items-center items-end">
                 {posts.map(post => (

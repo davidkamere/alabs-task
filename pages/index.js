@@ -24,7 +24,7 @@ const Home = () => {
     <div className="bg-white">
       <Head>
         <title>PCHA</title>
-        <link rel="icon" href="/stone.ico" />
+        <link rel="icon" href="/floral.ico" />
       </Head>
       
       {/* Header with Log out  */}
