@@ -3,14 +3,17 @@ import { useState, useEffect } from "react"
 import Head from 'next/head'
 import Post from "../../Components/Post"
 import Header from "../../Components/Header"
+import Loading from '../../Components/Loading'
 import { collection, onSnapshot, orderBy, query, where } from 'firebase/firestore'
 import { db } from '../../firebase'
 import { useRouter } from 'next/router'
+import { useSession } from "next-auth/react"
 
 
 
 function Profile (props) {
     const router = useRouter()
+    const { data: session, status } = useSession()
     const [posts, setPosts] = useState([])
     const { id } = router.query
 
@@ -26,6 +29,14 @@ function Profile (props) {
             snapshot => {setPosts(snapshot.docs)}
         )
     }, [db])
+
+    if (status === "loading") {
+        return <Loading />
+    }
+    
+    if (status === "unauthenticated") {
+        router.push('/auth/signin')
+    }
 
 
     return( 

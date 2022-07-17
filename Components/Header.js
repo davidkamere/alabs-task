@@ -37,7 +37,7 @@ const Header = (props) => {
                     onClick={() => setIsNavOpen(false)}
                     >
                     <svg
-                        className="h-8 w-8 text-gray-600"
+                        className="h-8 w-8 text-black"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
