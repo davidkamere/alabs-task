@@ -67,9 +67,9 @@ const Header = (props) => {
                 </section>
         
                 <ul className="DESKTOP-MENU hidden space-x-7 lg:flex">
-                    <li>
-                        <Link href="/places"><p className="mt-1.5 hover:cursor-pointer text-gray-400">PLACES</p></Link> 
-                    </li>
+                    {/* <li>
+                        <Link href="/places"><p className="mt-1.5 hover:cursor-pointer text-white hover:text-gray-400">PLACES</p></Link> 
+                    </li> */}
                     <li>
                         <Link href={`/profile/${session?.user?.username}`}>
                             <UserCircleIcon className="h-9 w-9 hover:cursor-pointer"/>
