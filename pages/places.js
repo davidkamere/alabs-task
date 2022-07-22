@@ -48,9 +48,9 @@ function Places () {
                 <link rel="icon" href="/floral.ico" />
             </Head>
 
-            <div className="flex flex-wrap gap-10 justify-center my-14">
+            <div className="flex flex-wrap gap-20 justify-center my-14">
                 {contents.map(content => (
-                    windowObj && <div key={content.id}><ReactPlayer url={content.data().url} width="375px"/></div>
+                    windowObj && <div key={content.id}><ReactPlayer url={content.data().url} controls={true} width='100%'/></div>
                 ))}
                 
             </div>
