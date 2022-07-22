@@ -44,13 +44,13 @@ function Places () {
         <>
             <Header />
             <Head>
-                <title>PCHA</title>
+                <title>Places | PCHA</title>
                 <link rel="icon" href="/floral.ico" />
             </Head>
 
-            <div className="flex flex-wrap gap-6 justify-center my-14">
+            <div className="flex flex-wrap gap-10 justify-center my-14">
                 {contents.map(content => (
-                    windowObj && <div key={content.id} className="mx-8"><ReactPlayer url={content.data().url} width="370px" /></div>
+                    windowObj && <div key={content.id}><ReactPlayer url={content.data().url} width="375px"/></div>
                 ))}
                 
             </div>

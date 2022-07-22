@@ -68,7 +68,7 @@ const Modal = () => {
     return(
         <Transition.Root show={open} as={Fragment}>
             <Dialog as='div' className='fixed z-10 inset-0 overflow-y-auto' onClose={setOpen}>
-                <div className="flex items-end justify-center min-h-[800px] sm:min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+                <div className="flex items-end justify-center min-h-[650px] sm:min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
                     <Transition.Child
                         as={Fragment}
                         enter="ease-out duration-300"
@@ -91,7 +91,7 @@ const Modal = () => {
                         leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                     >
                         <div className="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left
-                        overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-sm sm:w-full
+                        overflow-hidden shadow-xl transform transition-all sm:align-middle sm:max-w-sm sm:w-full
                         sm:p-6">
                             <div>
                                 {selectedFile ?
@@ -99,8 +99,8 @@ const Modal = () => {
                                 : 
                                 <div
                                     onClick={() => filePickerRef.current.click()}
-                                    className="mx-auto flex items-center justify-center h-20 w-20 rounded-full bg-red-100 cursor-pointer">
-                                    <CameraIcon className="h-12 w-12 text-red-600" aria-hidden="true"/>
+                                    className="border-dotted border-2 border-[#adda89] mx-auto flex items-center justify-center h-20 w-20 rounded-full bg-red-100 cursor-pointer">
+                                    <CameraIcon className="motion-reduce:animate-pulse h-12 w-12 text-red-500" aria-hidden="true"/>
                                 </div>
                                 }
                                 
@@ -116,7 +116,7 @@ const Modal = () => {
                                             <input 
                                                 ref={filePickerRef}
                                                 onChange={addImageToPost}
-                                                type="file" hidden/>
+                                                type="file" hidden required/>
                                         </div>
                                         <div className="mt-2">
                                             <input

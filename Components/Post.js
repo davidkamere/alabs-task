@@ -53,9 +53,7 @@ const Post = ({ id, username, img, caption }) => {
         }
 
     }
-    const hideVideo = () => {
-        setHidden('hidden')
-    }
+
 
 
     const sendComment = async (e) => {
@@ -79,13 +77,13 @@ const Post = ({ id, username, img, caption }) => {
     return (
         <div className="my-7 md:w-56 ">
             <div className="my-3">
-                <Image src={img} width={384} height={500} className="object-fill h-auto w-96 md:w-56" alt="" onLoad={hideVideo} />
+                <Image src={img} width={384} height={500} className="object-fill h-auto w-72 md:w-60" alt="" />
                 <video className={`object-contain h-68 w-96 ${hidden}`} controls="controls" id="video" onLoad={() => setHidden('')}>
                     <source src={img} type="video/mp4"></source>
                 </video>
             </div>
 
-            <div className="border rounded-sm border-[#fdf9a1] border-opacity-25 w-96 shadow-sm shadow-gray-500 md:w-56 md:text-sm md:border-none md:shadow-none ">
+            <div className="border rounded-sm border-[#fdf9a1] border-opacity-25 w-72 shadow-sm shadow-[#adda89] md:w-56 md:text-sm md:border-none md:shadow-none ">
                 {/* img */}
 
                 {/* Buttons */}

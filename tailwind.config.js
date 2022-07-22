@@ -11,6 +11,10 @@ module.exports = {
         'feed': "url('../public/dune.png')",
         'floral': "url('../public/floral.png')"
       },
+      fontFamily: {
+       montserrat: ["Montserrat"],
+       lato: ["Lato"]
+      },
     },
   },
   plugins: [

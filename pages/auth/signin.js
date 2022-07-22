@@ -9,6 +9,7 @@ export default function SignIn({ providers }) {
       <Image src={backG} alt="" layout="fill" className="fixed -z-10 min-h-screen"/>
       <div className="flex flex-col items-center jusifty-center py-2 px-14 text-center">
         <div className="mt-32">
+          <h1 className="text-2xl font-bold mb-4">PCHA</h1>
           <p className="font-xs italic">Sign in to create, discover and connect with the community.</p>
           <p className="font-xs italic">Google accounts allow us to personalize your page.</p>
           

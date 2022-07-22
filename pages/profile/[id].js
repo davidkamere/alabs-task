@@ -42,13 +42,13 @@ function Profile (props) {
     return( 
         <>
             <Head>
-                <title>PCHA</title>
+                <title>Profile | PCHA</title>
                 <link rel="icon" href="/floral.ico" />
             </Head>
             <Header />
-            <div className="grid grid-cols-1 md:p-5 md:grid-cols-2 lg:grid-cols-4 justify-items-center items-end">
+            <div className="flex flex-wrap md:p-5 justify-center items-end">
                 {posts.map(post => (
-                    <div key={post.id}>
+                    <div key={post.id}  className="mx-10">
                         <Post  id={post.id} username={null} img={post.data().image} caption={post.data().caption}/>
                     </div>
                 ))}
