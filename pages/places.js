@@ -5,14 +5,29 @@ import { useEffect, useState } from 'react';
 import { useSession } from 'next-auth/react';
 import Loading from '../Components/Loading'
 import { useRouter } from "next/router"
+import { db } from '../firebase'
+import { collection, onSnapshot, orderBy, query } from 'firebase/firestore'
 
 function Places () {
     const { data: session, status } = useSession()
     const router = useRouter()
-    const videos = [{url: 'https://www.youtube.com/watch?v=sQ3TcRQPifw', id:1}, {url: 'https://www.youtube.com/watch?v=tZdGe54zv-g', id:2}]
+    const [contents, setContents ] = useState([])
     
     const [windowObj, setWindowObj] = useState(false);
 
+    useEffect(() =>
+    {
+        
+        return onSnapshot(
+            query(
+                collection(db, "places"),
+                orderBy('timestamp', 'desc')
+            ),
+            snapshot => {setContents(snapshot.docs)}
+        )
+    }, [db])
+
+    // solves for issue when dealing with dynamic imports in NextJS
     useEffect(() => {
         if (typeof window !== "undefined") setWindowObj(true);
     }, []);
@@ -34,8 +49,8 @@ function Places () {
             </Head>
 
             <div className="flex flex-wrap gap-6 justify-center my-14">
-                {videos.map(video => (
-                    windowObj && <div key={video.id} className="mx-8"><ReactPlayer url={video.url} width="370px" /></div>
+                {contents.map(content => (
+                    windowObj && <div key={content.id} className="mx-8"><ReactPlayer url={content.data().url} width="370px" /></div>
                 ))}
                 
             </div>

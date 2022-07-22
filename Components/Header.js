@@ -57,7 +57,7 @@ const Header = (props) => {
                             <Link href={`/profile/${session?.user?.username}`}>MY PHOTOS</Link>
                         </li>
                         <li className="my-8 uppercase">
-                            <Link href="/places"><span className="text-gray-400">PLACES(BETA)</span></Link>
+                            <Link href="/places"><span className="text-gray-400">PLACES</span></Link>
                         </li>
                         <li className="my-8">
                             <button onClick={signInPage} className="py-2 px-3 bg-gradient-to-r from-[#adda89] to-[#fdf9a1] rounded-lg text-sm">SIGN OUT</button>
@@ -67,9 +67,9 @@ const Header = (props) => {
                 </section>
         
                 <ul className="DESKTOP-MENU hidden space-x-7 lg:flex">
-                    {/* <li>
-                        <Link href="/places"><p className="mt-1.5 hover:cursor-pointer text-white hover:text-gray-400">PLACES</p></Link> 
-                    </li> */}
+                    <li>
+                        <Link href="/places"><p className="mt-1.5 hover:cursor-pointer text-black">PLACES</p></Link> 
+                    </li>
                     <li>
                         <Link href={`/profile/${session?.user?.username}`}>
                             <UserCircleIcon className="h-9 w-9 hover:cursor-pointer"/>
