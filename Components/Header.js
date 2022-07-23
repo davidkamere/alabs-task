@@ -31,9 +31,9 @@ const Header = (props) => {
                     className="HAMBURGER-ICON space-y-2"
                     onClick={() => setIsNavOpen((prev) => !prev)}
                 >
-                    <span className="block h-0.5 w-7 bg-[#adda89]"></span>
-                    <span className="block h-0.5 w-7 bg-[#adda89]"></span>
-                    <span className="block h-0.5 w-7 bg-[#adda89]"></span>
+                    <span className="block h-0.5 w-7 bg-[#9ea659]"></span>
+                    <span className="block h-0.5 w-7 bg-[#9ea659]"></span>
+                    <span className="block h-0.5 w-7 bg-[#9ea659]"></span>
                 </div>
         
                 <div className={isNavOpen ? "showMenuNav " : "hideMenuNav"}>
@@ -65,7 +65,7 @@ const Header = (props) => {
                             <Link href="/places"><span className="">PLACES</span></Link>
                         </li>
                         <li className="my-8">
-                            <button onClick={signInPage} className="bg-[#336934] rounded px-4 py-2 shadow-xs font-bold text-black text-sm">SIGN OUT</button>
+                            <button onClick={signInPage} className="bg-[#9ea659] rounded px-4 py-2 shadow-xs font-bold text-black text-sm">SIGN OUT</button>
                         </li>
                     </ul>
                 </div>
