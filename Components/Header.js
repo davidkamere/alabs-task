@@ -31,9 +31,9 @@ const Header = (props) => {
                     className="HAMBURGER-ICON space-y-2"
                     onClick={() => setIsNavOpen((prev) => !prev)}
                 >
-                    <span className="block h-0.5 w-7 bg-[#C4D668]"></span>
-                    <span className="block h-0.5 w-7 bg-[#C4D668]"></span>
-                    <span className="block h-0.5 w-7 bg-[#C4D668]"></span>
+                    <span className="block h-0.5 w-7 bg-black"></span>
+                    <span className="block h-0.5 w-7 bg-black"></span>
+                    <span className="block h-0.5 w-7 bg-black"></span>
                 </div>
         
                 <div className={isNavOpen ? "showMenuNav " : "hideMenuNav"}>
