@@ -54,7 +54,7 @@ const Header = (props) => {
                         <line x1="6" y1="6" x2="18" y2="18" />
                     </svg>
                     </div>
-                    <ul className="flex flex-col items-center justify-between min-h-[250px] track-wide">
+                    <ul className="flex flex-col items-center justify-between min-h-[250px] track-wide text-white">
                         <li className="mt-0 mb-8 uppercase">
                             <Link href="/">HOME</Link>
                         </li>
