@@ -31,9 +31,9 @@ const Header = (props) => {
                     className="HAMBURGER-ICON space-y-2"
                     onClick={() => setIsNavOpen((prev) => !prev)}
                 >
-                    <span className="block h-0.5 w-7 bg-[#9ea659]"></span>
-                    <span className="block h-0.5 w-7 bg-[#9ea659]"></span>
-                    <span className="block h-0.5 w-7 bg-[#9ea659]"></span>
+                    <span className="block h-0.5 w-7 bg-[#a3d2a0]"></span>
+                    <span className="block h-0.5 w-7 bg-[#a3d2a0]"></span>
+                    <span className="block h-0.5 w-7 bg-[#a3d2a0]"></span>
                 </div>
         
                 <div className={isNavOpen ? "showMenuNav " : "hideMenuNav"}>
@@ -65,7 +65,7 @@ const Header = (props) => {
                             <Link href="/places"><span className="">PLACES</span></Link>
                         </li>
                         <li className="my-8">
-                            <button onClick={signInPage} className="bg-[#9ea659] rounded px-4 py-2 shadow-xs font-bold text-black text-sm">SIGN OUT</button>
+                            <button onClick={signInPage} className="bg-[#a3d2a0] rounded-full px-4 py-2 shadow-xs font-bold text-black text-sm">SIGN OUT</button>
                         </li>
                     </ul>
                 </div>
@@ -85,7 +85,7 @@ const Header = (props) => {
                         </Link>
                     </li>
                     <li>
-                        <button onClick={signInPage} className="bg-[#9ea659] hover:text-black  hover:bg-lime-50 rounded px-4 py-2 shadow-xs font-bold text-white text-sm transition ease-in-out duration-500">SIGN OUT</button>
+                        <button onClick={signInPage} className="bg-[#a3d2a0] hover:text-black  hover:bg-lime-50 rounded-full px-4 py-2 shadow-xs font-bold text-white text-sm transition ease-in-out duration-500">SIGN OUT</button>
                     </li>
                 </ul>
             </nav>

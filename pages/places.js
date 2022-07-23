@@ -77,23 +77,23 @@ function Places () {
                             block
                             w-full
                             h-14
-                            px-3
+                           
                             py-1.5
                             text-base
                             bg-white
-                            
-                            bg-opacity-10 backdrop-blur-lg rounded drop-shadow-lg
+                            pl-5
+                            bg-opacity-10 backdrop-blur-lg rounded-full drop-shadow-lg
                             transition
                             ease-in-out
                             m-0
-                            focus:border-[#9ea659]
+                            focus:border-[#a3d2a0]
                             focus:outline-0 focus:ring-0
                         "
                         placeholder="URL"
                         required
                         />
-                        <button type='submit' className='inset-y-0 absolute z-10 bg-[#9ea659] flex items-center px-3 m-1 justify-self-end shadow shadow-white ml-4 hover:scale-105'>
-                            <UploadIcon className='w-7 h-7 text-white '/>
+                        <button type='submit' className='rounded-full inset-y-0 absolute z-10 bg-[#a3d2a0] flex items-center px-3 m-1 justify-self-end shadow shadow-white ml-4 hover:scale-105'>
+                            <UploadIcon className='w-6 h-6 text-white '/>
                         </button>
                     </form>
                     
