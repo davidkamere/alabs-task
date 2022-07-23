@@ -7,6 +7,7 @@ import Loading from '../Components/Loading'
 import { useRouter } from "next/router"
 import { db } from '../firebase'
 import { collection, onSnapshot, orderBy, query } from 'firebase/firestore'
+import Link from 'next/link';
 
 function Places () {
     const { data: session, status } = useSession()
@@ -48,10 +49,18 @@ function Places () {
                 <link rel="icon" href="/floral.ico" />
             </Head>
 
-            <div className="flex flex-col gap-20 justify-center pb-20 pt-2 md:px-40 lg:px-96">
+            <div className="flex flex-col justify-center pb-20 pt-2 md:px-40 lg:px-96">
                 {contents.map(content => (
-                    windowObj && <div key={content.id}><ReactPlayer url={content.data().url} controls={true} width='100%' light={true}/></div>
+                    windowObj &&
+                    <div className='mb-20'>
+                        <div key={content.id}><ReactPlayer url={content.data().url} controls={true} width='100%' light={true}/></div>
+                        <div className="flex justify-end">
+                            <Link href={`/profile/${content?.data().username}`}><span className="font-bold mr-2 text-gray-800 hover:cursor-pointer text-sm mt-4">shared by {content.data().username}</span></Link>
+                            {/* <div className="text-sm text-gray-800 font-bold">{timestamp?.toDate().toLocaleDateString()}</div> */}
+                        </div>
+                    </div>
                 ))}
+                
                 
             </div>
 
