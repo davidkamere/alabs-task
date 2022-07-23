@@ -99,7 +99,7 @@ const Modal = () => {
                                 : 
                                 <div
                                     onClick={() => filePickerRef.current.click()}
-                                    className="border-dotted border-2 border-[#adda89] mx-auto flex items-center justify-center h-20 w-20 rounded-full bg-red-100 cursor-pointer">
+                                    className="border-dotted border-2 border-[#C4D668] mx-auto flex items-center justify-center h-20 w-20 rounded-full bg-red-100 cursor-pointer">
                                     <CameraIcon className="motion-reduce:animate-pulse h-12 w-12 text-red-500" aria-hidden="true"/>
                                 </div>
                                 }
