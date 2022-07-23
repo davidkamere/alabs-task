@@ -85,7 +85,7 @@ const Header = (props) => {
                         </Link>
                     </li>
                     <li>
-                        <button onClick={signInPage} className="bg-[#9ea659] rounded px-4 py-2 shadow-xs font-bold text-white text-sm">SIGN OUT</button>
+                        <button onClick={signInPage} className="bg-[#9ea659] hover:text-black  hover:bg-red-50 rounded px-4 py-2 shadow-xs font-bold text-white text-sm transition ease-in-out duration-500">SIGN OUT</button>
                     </li>
                 </ul>
             </nav>
