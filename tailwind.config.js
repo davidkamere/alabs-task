@@ -6,11 +6,6 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'signin': "url('../public/stone.png')",
-        'feed': "url('../public/dune.png')",
-        'floral': "url('../public/floral.png')"
-      },
       fontFamily: {
        montserrat: ["Montserrat"],
        lato: ["Lato"]

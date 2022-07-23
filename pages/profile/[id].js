@@ -40,7 +40,7 @@ function Profile (props) {
 
 
     return( 
-        <>
+        <div className="bg-black text-white min-h-screen">
             <Head>
                 <title>Profile | PCHA</title>
                 <link rel="icon" href="/floral.ico" />
@@ -55,7 +55,7 @@ function Profile (props) {
             
             </div>
            
-        </>
+        </div>
     )
 }
 

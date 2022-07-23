@@ -11,7 +11,7 @@ import Image from "next/future/image"
 import Link from 'next/link'
 
 // component for a single post
-const Post = ({ id, username, img, caption }) => {
+const Post = ({ id, username, img, caption, timestamp }) => {
     const { data: session } = useSession()
     const addComment = useRef(null)
     const [comment, setComment] = useState('')
@@ -73,40 +73,46 @@ const Post = ({ id, username, img, caption }) => {
         addComment.current.focus()
     }
 
+    console.log(timestamp)
 
     return (
         <div className="my-7 md:w-56 ">
-            <div className="my-3">
-                <Image src={img} width={384} height={500} className="object-fill h-auto w-72 md:w-60" alt="" />
+            <div className="my-5">
+                <Image src={img} width={384} height={500} className="rounded object-fill h-auto w-72 md:w-60 shadow-sm shadow-emerald-50/5" alt="" />
                 <video className={`object-contain h-68 w-96 ${hidden}`} controls="controls" id="video" onLoad={() => setHidden('')}>
                     <source src={img} type="video/mp4"></source>
                 </video>
+                {username && <div className="flex justify-between mt-1">
+                    <Link href={`/profile/${username}`}><span className="font-bold mr-2 text-gray-800 hover:cursor-pointer text-sm">{username}</span></Link>
+                    <div className="text-sm text-gray-800 font-bold">{timestamp?.toDate().toLocaleDateString()}</div>
+                </div>}
             </div>
 
-            <div className="border rounded-sm border-[#fdf9a1] border-opacity-25 w-72 shadow-sm shadow-[#adda89] md:w-56 md:text-sm md:border-none md:shadow-none ">
+            <div className="w-72 md:w-56 md:text-sm md:border-none md:shadow-none ">
                 {/* img */}
+                
 
                 {/* Buttons */}
-                {username && <div className="flex justify-between px-4 pt-4 mb-2 md:px-0 ">
+                {username && <div className="flex justify-between pt-1 mb-2 md:px-0 ">
                     <div>
                         {hasLiked ?
-                            <HeartIconFilled onClick={likePost} className="h-6 hover:scale-125 curor-pointer transition-all duration-150 ease-out" />
+                            <HeartIconFilled onClick={likePost} className="h-6 hover:scale-125 curor-pointer transition-all duration-150 ease-out text-[#fdf9a1]" />
                             :
                             <HeartIcon onClick={likePost} className="h-6 hover:scale-125 curor-pointer transition-all duration-150 ease-out" />
                         }
                     </div>
                     <div>
-                        {likes.length > 0 && (
+                        {username === session?.user?.username && likes.length > 0 && (
                             <p className="font-bold">{likes.length} {likes.length > 1 ? <span>Likes</span> : <span>Like</span>}</p>
                         )}
                     </div>
                 </div>}
+
                 {/* Caption */}
-                <div className="p-5 md:px-0">
-                    
-                    {username && <Link href={`/profile/${username}`}><span className="font-bold mr-2 text-gray-800 hover:cursor-pointer">{username}</span></Link>}
+                <div className="py-5 md:px-0">
                     <span className="">{caption}</span>
                 </div>
+                
                 {/* Comments */}
                 {/* {comments.length > 0 && (
                     <div className="ml-5 h-14 overflow-y-scroll scrollbar-hide">

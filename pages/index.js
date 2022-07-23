@@ -21,15 +21,16 @@ const Home = () => {
   }
 
   return (
-    <div className="bg-white">
+    <div className="bg-black text-white min-h-screen">
       <Head>
         <title>PCHA</title>
         <link rel="icon" href="/floral.ico" />
       </Head>
       
       {/* Header with Log out  */}
+      
       {session && <Header />}
-
+      
       
       {/* Feed */}
       

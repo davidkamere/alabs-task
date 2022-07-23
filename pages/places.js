@@ -41,21 +41,21 @@ function Places () {
     }
 
     return (
-        <>
+        <div className='bg-black min-h-screen'>
             <Header />
             <Head>
                 <title>Places | PCHA</title>
                 <link rel="icon" href="/floral.ico" />
             </Head>
 
-            <div className="flex flex-col gap-20 justify-center my-14 p-2 md:px-40 lg:px-80">
+            <div className="flex flex-col gap-20 justify-center pb-20 pt-2 md:px-40 lg:px-96">
                 {contents.map(content => (
-                    windowObj && <div key={content.id}><ReactPlayer url={content.data().url} controls={true} width='100%'/></div>
+                    windowObj && <div key={content.id}><ReactPlayer url={content.data().url} controls={true} width='100%' light={true}/></div>
                 ))}
                 
             </div>
 
-        </>
+        </div>
     )
 }
 

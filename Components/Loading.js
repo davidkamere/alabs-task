@@ -1,17 +1,11 @@
+import Image from "next/future/image"
+
 const Loading = () => {
     return (
-        <div className="flex justify-center items-center h-screen">
-            <div className="w-60 h-24 border-2 rounded-md mx-auto mt-20">
-            <div className="flex animate-pulse flex-row items-center h-full justify-center space-x-5">
-                <div className="w-12 bg-gray-300 h-12 rounded-full ">
-                </div>
-                    <div className="flex flex-col space-y-3">
-                    <div className="w-36 bg-gray-300 h-6 rounded-md ">
-                    </div>
-                    <div className="w-24 bg-gray-300 h-6 rounded-md ">
-                    </div>
-                </div>
-            </div>
+        <div className="flex justify-center items-center h-screen bg-black">
+            <div className="animate-pulse flex justify-center text-3xl font-bold mb-8 text-[#fdf9a1] tracking-widest">
+                <Image src="/floral.ico" width={30} height={30} className="mr-4"/>
+                <span className="text-[#adda89]">P</span>CHA
             </div>
         </div>
       )

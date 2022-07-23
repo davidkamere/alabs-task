@@ -18,11 +18,11 @@ const Header = (props) => {
     }
 
     return (
-        <div className="pt-1 px-8 ">
+        <div className="pt-1 px-6 md:px-8">
             <div className="flex items-center justify-between py-8">
                 <div className="flex items-center ">
                     <Link href="/"><Image src="/floral.ico" width={30} height={30} className="mr-4"/></Link>
-                    <Link href="/"><p className="mt-0.5 font-bold hover:cursor-pointer text-sm">PCHA</p></Link>
+                    <Link href="/"><p className="mt-0.5 font-bold hover:cursor-pointer text-sm text-[#fdf9a1]"><span className="text-[#adda89]">P</span>CHA</p></Link>
                 </div>
 
             <nav className="">
@@ -42,7 +42,7 @@ const Header = (props) => {
                     onClick={() => setIsNavOpen(false)}
                     >
                     <svg
-                        className="h-8 w-8 text-black"
+                        className="h-8 w-8 text-white"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
@@ -54,18 +54,18 @@ const Header = (props) => {
                         <line x1="6" y1="6" x2="18" y2="18" />
                     </svg>
                     </div>
-                    <ul className="flex flex-col items-center justify-between min-h-[250px] ">
+                    <ul className="flex flex-col items-center justify-between min-h-[250px] track-wide">
                         <li className="mt-0 mb-8 uppercase">
                             <Link href="/">HOME</Link>
                         </li>
-                        <li className="my-8 uppercase">
+                        <li className="my-8 uppercase ">
                             <Link href={`/profile/${session?.user?.username}`}>PROFILE</Link>
                         </li>
-                        <li className="my-8 uppercase">
-                            <Link href="/places"><span className="text-gray-400">PLACES</span></Link>
+                        <li className="my-8 uppercase ">
+                            <Link href="/places"><span className="">PLACES</span></Link>
                         </li>
                         <li className="my-8">
-                            <button onClick={signInPage} className="py-2 px-3 bg-gradient-to-r from-[#adda89] to-[#fdf9a1] rounded-lg text-sm">SIGN OUT</button>
+                            <button onClick={signInPage} className="bg-[#adda89] rounded px-4 py-2 shadow-xs font-bold text-black text-sm">SIGN OUT</button>
                         </li>
                     </ul>
                 </div>
@@ -75,17 +75,17 @@ const Header = (props) => {
                     <li>
                         <Link href="/places">
                             <div>
-                                <FilmIcon className="h-7 w-7 hover:cursor-pointer text-slate-700 hover:text-slate-900"/>
+                                <FilmIcon className="h-8 w-8 py-1 hover:cursor-pointer text-slate-300 hover:text-slate-100"/>
                             </div>
                         </Link>
                     </li>
                     <li>
                         <Link href={`/profile/${session?.user?.username}`}>
-                            <UserCircleIcon className="h-7 w-7 hover:cursor-pointer text-slate-700 hover:text-slate-900"/>
+                            <UserCircleIcon className="h-8 w-8 py-1 hover:cursor-pointer text-slate-300 hover:text-slate-100"/>
                         </Link>
                     </li>
                     <li>
-                        <button onClick={signInPage} className="py-2 px-3 bg-gradient-to-r from-[#adda89] to-[#fdf9a1] rounded-lg text-xs font-bold">SIGN OUT</button>
+                        <button onClick={signInPage} className="bg-[#adda89] rounded px-4 py-2 shadow-xs font-bold text-black text-sm">SIGN OUT</button>
                     </li>
                 </ul>
             </nav>
@@ -100,7 +100,7 @@ const Header = (props) => {
                 height: 100vh;
                 top: 0;
                 left: 0;
-                background: white;
+                background: black;
                 z-index: 10;
                 display: flex;
                 flex-direction: column;
