@@ -42,7 +42,7 @@ const Header = (props) => {
                     onClick={() => setIsNavOpen(false)}
                     >
                     <svg
-                        className="h-8 w-8 text-white"
+                        className="h-8 w-8 "
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
@@ -54,14 +54,14 @@ const Header = (props) => {
                         <line x1="6" y1="6" x2="18" y2="18" />
                     </svg>
                     </div>
-                    <ul className="flex flex-col items-center justify-between min-h-[250px] track-wide text-white">
+                    <ul className="flex flex-col items-center justify-between min-h-[250px] track-wide ">
                         <li className="mt-0 mb-8 uppercase">
                             <Link href="/">HOME</Link>
                         </li>
-                        <li className="my-8 uppercase ">
+                        <li className="my-8 uppercase hover:cursor-pointer">
                             <Link href={`/profile/${session?.user?.username}`}>PROFILE</Link>
                         </li>
-                        <li className="my-8 uppercase ">
+                        <li className="my-8 uppercase hover:cursor-pointer">
                             <Link href="/places"><span className="">PLACES</span></Link>
                         </li>
                         <li className="my-8">
@@ -75,13 +75,13 @@ const Header = (props) => {
                     <li>
                         <Link href="/places">
                             <div>
-                                <FilmIcon className="h-8 w-8 py-1 hover:cursor-pointer text-slate-300 hover:text-slate-100"/>
+                                <FilmIcon className="h-8 w-8 py-1 hover:cursor-pointer text-slate-400 hover:text-slate-600"/>
                             </div>
                         </Link>
                     </li>
                     <li>
                         <Link href={`/profile/${session?.user?.username}`}>
-                            <UserCircleIcon className="h-8 w-8 py-1 hover:cursor-pointer text-slate-300 hover:text-slate-100"/>
+                            <UserCircleIcon className="h-8 w-8 py-1 hover:cursor-pointer text-slate-400 hover:text-slate-600"/>
                         </Link>
                     </li>
                     <li>
@@ -100,7 +100,7 @@ const Header = (props) => {
                 height: 100vh;
                 top: 0;
                 left: 0;
-                background: black;
+                background: white;
                 z-index: 10;
                 display: flex;
                 flex-direction: column;

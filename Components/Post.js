@@ -83,8 +83,8 @@ const Post = ({ id, username, img, caption, timestamp }) => {
                     <source src={img} type="video/mp4"></source>
                 </video>
                 {username && <div className="flex justify-between mt-1">
-                    <Link href={`/profile/${username}`}><span className="font-bold mr-2 text-gray-800 hover:cursor-pointer text-sm">{username}</span></Link>
-                    <div className="text-sm text-gray-800 font-bold">{timestamp?.toDate().toLocaleDateString()}</div>
+                    <Link href={`/profile/${username}`}><span className="font-bold mr-2 text-gray-300 hover:cursor-pointer text-sm">{username}</span></Link>
+                    <div className="text-sm text-gray-300 font-bold">{timestamp?.toDate().toLocaleDateString()}</div>
                 </div>}
             </div>
 
@@ -96,7 +96,7 @@ const Post = ({ id, username, img, caption, timestamp }) => {
                 {username && <div className="flex justify-between pt-1 mb-2 md:px-0 ">
                     <div>
                         {hasLiked ?
-                            <HeartIconFilled onClick={likePost} className="h-6 hover:scale-125 curor-pointer transition-all duration-150 ease-out text-[#fdf9a1]" />
+                            <HeartIconFilled onClick={likePost} className="h-6 hover:scale-125 curor-pointer transition-all duration-150 ease-out" />
                             :
                             <HeartIcon onClick={likePost} className="h-6 hover:scale-125 curor-pointer transition-all duration-150 ease-out" />
                         }
@@ -110,7 +110,7 @@ const Post = ({ id, username, img, caption, timestamp }) => {
 
                 {/* Caption */}
                 <div className="py-5 md:px-0">
-                    <span className="">{caption}</span>
+                    <span className="font-bold">{caption}</span>
                 </div>
                 
                 {/* Comments */}
