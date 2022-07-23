@@ -50,7 +50,7 @@ function Places () {
                 <link rel="icon" href="/floral.ico" />
             </Head>
 
-            <div className="flex flex-col justify-center pb-5 pt-2 px-1 md:px-40 lg:px-96">
+            <div className="flex flex-col justify-center pb-1 pt-2 px-1 md:px-40 lg:px-96">
                 {contents.map(content => (
                     windowObj &&
                     <div className='mb-20'>
@@ -92,7 +92,7 @@ function Places () {
                         placeholder="URL"
                         required
                         />
-                        <button type='submit' className='rounded-full inset-y-0 absolute z-10 bg-[#a3d2a0] flex items-center px-3 m-1 justify-self-end shadow shadow-white ml-4 hover:scale-105'>
+                        <button type='submit' className='rounded-full inset-y-0 absolute z-10 bg-[#a3d2a0] flex items-center px-3 m-1 justify-self-end shadow shadow-[white] ml-4 hover:scale-105'>
                             <UploadIcon className='w-6 h-6 text-white '/>
                         </button>
                     </form>
