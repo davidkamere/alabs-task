@@ -8,6 +8,7 @@ import { useRouter } from "next/router"
 import { db } from '../firebase'
 import { collection, onSnapshot, orderBy, query } from 'firebase/firestore'
 import Link from 'next/link';
+import { UploadIcon } from '@heroicons/react/solid'
 
 function Places () {
     const { data: session, status } = useSession()
@@ -42,14 +43,14 @@ function Places () {
     }
 
     return (
-        <div className='bg-white min-h-screen'>
+        <div className='bg-white min-h-screen p-2'>
             <Header />
             <Head>
                 <title>Places | PCHA</title>
                 <link rel="icon" href="/floral.ico" />
             </Head>
 
-            <div className="flex flex-col justify-center pb-20 pt-2 px-1 md:px-40 lg:px-96">
+            <div className="flex flex-col justify-center pb-5 pt-2 px-1 md:px-40 lg:px-96">
                 {contents.map(content => (
                     windowObj &&
                     <div className='mb-20'>
@@ -62,6 +63,41 @@ function Places () {
                 ))}
                 
                 
+            </div>
+
+            <div className="flex justify-center ">
+                <div className="mb-20 h-20 md:px-40 lg:px-96 w-screen ">
+                    <form className='relative flex justify-end'>
+                        
+                        <input
+                        type="text"
+                        className="
+                            outline-0
+                          ring-[#9ea659] ring-inset ring-1
+                            block
+                            w-full
+                            h-14
+                            px-3
+                            py-1.5
+                            text-base
+                            bg-white
+                            
+                            bg-opacity-10 backdrop-blur-lg rounded drop-shadow-lg
+                            transition
+                            ease-in-out
+                            m-0
+                            focus:border-[#9ea659]
+                            focus:outline-0 focus:ring-0
+                        "
+                        placeholder="URL"
+                        required
+                        />
+                        <button type='submit' className='inset-y-0 absolute z-10 bg-[#9ea659] flex items-center px-3 m-1 justify-self-end shadow shadow-white ml-4 hover:scale-105'>
+                            <UploadIcon className='w-7 h-7 text-white '/>
+                        </button>
+                    </form>
+                    
+                </div>
             </div>
 
         </div>

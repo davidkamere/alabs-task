@@ -73,7 +73,6 @@ const Post = ({ id, username, img, caption, timestamp }) => {
         addComment.current.focus()
     }
 
-    console.log(timestamp)
 
     return (
         <div className="my-7 md:w-56 ">
@@ -84,7 +83,7 @@ const Post = ({ id, username, img, caption, timestamp }) => {
                 </video>
                 {username && <div className="flex justify-between mt-1">
                     <Link href={`/profile/${username}`}><span className="font-bold mr-2 text-gray-300 hover:cursor-pointer text-sm">{username}</span></Link>
-                    <div className="text-sm text-gray-300 font-bold">{timestamp?.toDate().toLocaleDateString()}</div>
+                    <div className="text-sm text-gray-300 font-bold tracking-wide">{timestamp?.toDate().toLocaleDateString()}</div>
                 </div>}
             </div>
 

@@ -22,7 +22,7 @@ const Header = (props) => {
             <div className="flex items-center justify-between py-8">
                 <div className="flex items-center ">
                     <Link href="/"><Image src="/floral.ico" width={30} height={30} className="mr-4"/></Link>
-                    <Link href="/"><p className="mt-0.5 font-bold hover:cursor-pointer text-sm text-[#fdf9a1]"><span className="text-[#adda89]">P</span>CHA</p></Link>
+                    <Link href="/"><p className="mt-0.5 font-bold hover:cursor-pointer text-sm text-[#efff34] tracking-widest"><span className="text-[#9ea659]">P</span>CHA</p></Link>
                 </div>
 
             <nav className="">
@@ -65,7 +65,7 @@ const Header = (props) => {
                             <Link href="/places"><span className="">PLACES</span></Link>
                         </li>
                         <li className="my-8">
-                            <button onClick={signInPage} className="bg-[#adda89] rounded px-4 py-2 shadow-xs font-bold text-black text-sm">SIGN OUT</button>
+                            <button onClick={signInPage} className="bg-[#336934] rounded px-4 py-2 shadow-xs font-bold text-black text-sm">SIGN OUT</button>
                         </li>
                     </ul>
                 </div>
@@ -75,17 +75,17 @@ const Header = (props) => {
                     <li>
                         <Link href="/places">
                             <div>
-                                <FilmIcon className="h-8 w-8 py-1 hover:cursor-pointer text-slate-400 hover:text-slate-600"/>
+                                <FilmIcon className="h-8 w-8 py-1 hover:cursor-pointer text-slate-500 hover:text-slate-700"/>
                             </div>
                         </Link>
                     </li>
                     <li>
                         <Link href={`/profile/${session?.user?.username}`}>
-                            <UserCircleIcon className="h-8 w-8 py-1 hover:cursor-pointer text-slate-400 hover:text-slate-600"/>
+                            <UserCircleIcon className="h-8 w-8 py-1 hover:cursor-pointer text-slate-500 hover:text-slate-700"/>
                         </Link>
                     </li>
                     <li>
-                        <button onClick={signInPage} className="bg-[#adda89] rounded px-4 py-2 shadow-xs font-bold text-black text-sm">SIGN OUT</button>
+                        <button onClick={signInPage} className="bg-[#9ea659] rounded px-4 py-2 shadow-xs font-bold text-white text-sm">SIGN OUT</button>
                     </li>
                 </ul>
             </nav>
