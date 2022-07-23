@@ -49,7 +49,7 @@ function Places () {
                 <link rel="icon" href="/floral.ico" />
             </Head>
 
-            <div className="flex flex-col justify-center pb-20 pt-2 md:px-40 lg:px-96">
+            <div className="flex flex-col justify-center pb-20 pt-2 px-1 md:px-40 lg:px-96">
                 {contents.map(content => (
                     windowObj &&
                     <div className='mb-20'>
