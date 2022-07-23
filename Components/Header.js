@@ -22,7 +22,7 @@ const Header = (props) => {
             <div className="flex items-center justify-between py-8">
                 <div className="flex items-center ">
                     <Link href="/"><Image src="/floral.ico" width={30} height={30} className="mr-4"/></Link>
-                    <Link href="/"><p className="mt-0.5 font-bold hover:cursor-pointer text-sm text-[#efff34] tracking-widest"><span className="text-[#9ea659]">P</span>CHA</p></Link>
+                    <Link href="/"><p className="mt-0.5 font-bold hover:cursor-pointer text-sm text-black tracking-widest"><span className="text-[#9ea659]">P</span>CHA</p></Link>
                 </div>
 
             <nav className="">

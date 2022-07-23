@@ -9,7 +9,7 @@ export default function SignIn({ providers }) {
       {/* <Image src={backG} alt="" layout="fill" className="fixed -z-10 min-h-screen"/> */}
       <div className="flex flex-col items-center jusifty-center py-2 px-14 text-center bg-white text-black min-h-screen">
         <div className="mt-28">
-          <div className="flex justify-center text-3xl font-bold mb-8 text-[#efff34] tracking-widest">
+          <div className="flex justify-center text-3xl font-bold mb-8 text-black tracking-widest">
             <Image src="/floral.ico" width={30} height={30} className="mr-4"/>
             <span className="text-[#9ea659]">P</span>CHA
           </div>
