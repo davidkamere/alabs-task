@@ -31,9 +31,7 @@ const Modal = () => {
             username: session.user.username,
             caption: captionRef.current.value || null,
             timestamp: serverTimestamp()
-        })
-
-        console.log("New doc added with ID", docRef.id)
+        }) 
 
         const imageRef = ref(storage, `posts/${docRef.id}/image`)
 

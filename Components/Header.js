@@ -62,7 +62,7 @@ const Header = (props) => {
                             <Link href={`/profile/${session?.user?.username}`}>PROFILE</Link>
                         </li>
                         <li className="my-8 uppercase hover:cursor-pointer">
-                            <Link href="/places"><span className="">PLACES</span></Link>
+                            <Link href="/random"><span className="">Random</span></Link>
                         </li>
                         <li className="my-8">
                             <button onClick={signInPage} className="bg-[#C4D668] rounded-full px-4 py-2 shadow-xs font-bold text-black text-sm">SIGN OUT</button>
@@ -73,7 +73,7 @@ const Header = (props) => {
         
                 <ul className="DESKTOP-MENU hidden space-x-7 lg:flex">
                     <li>
-                        <Link href="/places">
+                        <Link href="/random">
                             <div>
                                 <FilmIcon className="h-8 w-8 py-1 hover:cursor-pointer text-slate-500 hover:text-slate-700"/>
                             </div>
