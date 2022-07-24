@@ -1,9 +1,16 @@
 import { getProviders, signIn as signIntoProvider } from "next-auth/react"
 import { ArrowSmDownIcon } from "@heroicons/react/solid"
 import Image from "next/future/image"
-// import backG from "../../public/backgrounds/bw.png"
+import { useSession } from 'next-auth/react'
+import Loading from '../../Components/Loading'
 
 export default function SignIn({ providers }) {
+  const { data: session, status } = useSession()
+
+  if (status === "loading") {
+    return <Loading />
+  }
+
   return (
     <>
       {/* <Image src={backG} alt="" layout="fill" className="fixed -z-10 min-h-screen"/> */}

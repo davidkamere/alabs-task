@@ -1,20 +1,19 @@
 import Head from 'next/head'
 import Header from "../Components/Header"
-import ReactPlayer from 'react-player/lazy'
-import { useEffect, useState } from 'react';
-import { useSession } from 'next-auth/react';
 import Loading from '../Components/Loading'
-import { useRouter } from "next/router"
+import ReactPlayer from 'react-player/lazy'
+import { useEffect, useState } from 'react'
+import { useSession } from 'next-auth/react'
 import { db } from '../firebase'
 import { collection, onSnapshot, orderBy, query, addDoc, doc, serverTimestamp, updateDoc } from 'firebase/firestore'
-import Link from 'next/link';
+import Link from 'next/link'
 import { UploadIcon } from '@heroicons/react/solid'
 
 
 
 function Random () {
-    const router = useRouter()
-    const { data: session, status } = useSession()
+
+    const { data: session, status} = useSession()
     const [contents, setContents ] = useState([])
     const [url, setUrl] = useState('')
     const [valid, setValid] = useState(true)
@@ -91,13 +90,8 @@ function Random () {
 
     }
 
-
     if (status === "loading") {
         return <Loading />
-    }
-    
-    if (status === "unauthenticated") {
-        router.push('/auth/signin')
     }
 
     return (

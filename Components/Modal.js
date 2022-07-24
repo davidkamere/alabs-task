@@ -114,6 +114,7 @@ const Modal = () => {
                                             <input 
                                                 ref={filePickerRef}
                                                 onChange={addImageToPost}
+                                                accept="image/*"
                                                 type="file" hidden required/>
                                         </div>
                                         <div className="mt-2">
