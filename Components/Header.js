@@ -22,7 +22,7 @@ const Header = (props) => {
             <div className="flex items-center justify-between py-8">
                 <div className="flex items-center ">
                     <Link href="/"><Image src="/floral.ico" width={30} height={30} className="mr-4"/></Link>
-                    <Link href="/"><p className="mt-0.5 font-bold hover:cursor-pointer text-sm text-black tracking-widest"><span className="text-[#e4da30]">P</span>CHA</p></Link>
+                    <Link href="/"><p className="mt-0.5 font-bold hover:cursor-pointer text-sm text-black tracking-widest"><span className="text-[#efff34]">P</span>CHA</p></Link>
                 </div>
 
             <nav className="">
@@ -65,7 +65,7 @@ const Header = (props) => {
                             <Link href="/random"><span className="">Random</span></Link>
                         </li>
                         <li className="my-8">
-                            <button onClick={signInPage} className="bg-[#C4D668] rounded-full px-4 py-2 shadow-xs font-bold text-black text-sm">SIGN OUT</button>
+                            <button onClick={signInPage} className="bg-[#87cd64] rounded-full px-4 py-2 shadow-xs font-bold text-black text-sm">SIGN OUT</button>
                         </li>
                     </ul>
                 </div>
@@ -85,7 +85,7 @@ const Header = (props) => {
                         </Link>
                     </li>
                     <li>
-                        <button onClick={signInPage} className="bg-[#C4D668] hover:text-black  hover:bg-lime-50 rounded-full px-4 py-2 shadow-xs font-bold text-white text-sm transition ease-in-out duration-500">SIGN OUT</button>
+                        <button onClick={signInPage} className="bg-[#87cd64] hover:text-black  hover:bg-lime-50 rounded-full px-4 py-2 shadow-xs font-bold text-white text-sm transition ease-in-out duration-500">SIGN OUT</button>
                     </li>
                 </ul>
             </nav>

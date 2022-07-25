@@ -18,7 +18,7 @@ export default function SignIn({ providers }) {
         <div className="mt-28">
           <div className="flex justify-center text-3xl font-bold mb-8 text-black tracking-widest">
             <Image src="/floral.ico" width={30} height={30} className="mr-4"/>
-            <span className="text-[#e4da30]">P</span>CHA
+            <span className="text-[#efff34]">P</span>CHA
           </div>
           <p className="font-xs italic">Sign in to create, discover and connect with the community.</p>
           <p className="font-xs italic">Google accounts allow us to personalize your page.</p>
