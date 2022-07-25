@@ -20,10 +20,10 @@ const Header = (props) => {
     return (
         <div className="pt-1 px-6 md:px-8">
             <div className="flex items-center justify-between py-8">
-                <div className="flex items-center ">
+                {!props.protected ? <div className="flex items-center ">
                     <Link href="/"><Image src="/floral.ico" width={30} height={30} className="mr-4"/></Link>
                     <Link href="/"><p className="mt-0.5 font-bold hover:cursor-pointer text-sm text-black tracking-widest"><span className="text-[#e4da30]">P</span>CHA</p></Link>
-                </div>
+                </div> : <div className="text-slate-500 FONT-BOLD">Welcome, {session?.user?.username}</div>}
 
             <nav className="">
                 <section className="MOBILE-MENU flex lg:hidden ">
@@ -61,9 +61,9 @@ const Header = (props) => {
                         <li className="my-8 uppercase hover:cursor-pointer">
                             <Link href={`/profile/${session?.user?.username}`}>PROFILE</Link>
                         </li>
-                        <li className="my-8 uppercase hover:cursor-pointer">
+                        {! props.protected && <li className="my-8 uppercase hover:cursor-pointer">
                             <Link href="/random"><span className="">Random</span></Link>
-                        </li>
+                        </li>}
                         <li className="my-8">
                             <button onClick={signInPage} className="bg-[#C4D668] rounded-full px-4 py-2 shadow-xs font-bold text-black text-sm">SIGN OUT</button>
                         </li>
@@ -72,18 +72,20 @@ const Header = (props) => {
                 </section>
         
                 <ul className="DESKTOP-MENU hidden space-x-7 lg:flex">
+                    {! props.protected &&
+                    <>
                     <li>
                         <Link href="/random">
                             <div>
-                                <FilmIcon className="h-8 w-8 py-1 hover:cursor-pointer text-slate-500 hover:text-slate-700"/>
+                                <FilmIcon className="transition ease-in-out duration-100 hover:scale-105 h-8 w-8 py-1 hover:cursor-pointer text-slate-500 hover:text-slate-700"/>
                             </div>
                         </Link>
                     </li>
                     <li>
                         <Link href={`/profile/${session?.user?.username}`}>
-                            <UserCircleIcon className="h-8 w-8 py-1 hover:cursor-pointer text-slate-500 hover:text-slate-700"/>
+                            <UserCircleIcon className="transition ease-in-out duration-100 hover:scale-105 h-8 w-8 py-1 hover:cursor-pointer text-slate-500 hover:text-slate-700"/>
                         </Link>
-                    </li>
+                    </li></>} 
                     <li>
                         <button onClick={signInPage} className="bg-[#C4D668] hover:text-black  hover:bg-lime-50 rounded-full px-4 py-2 shadow-xs font-bold text-white text-sm transition ease-in-out duration-500">SIGN OUT</button>
                     </li>
