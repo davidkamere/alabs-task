@@ -102,13 +102,13 @@ function Random () {
                 <link rel="icon" href="/floral.ico" />
             </Head>
 
-            <div className="flex flex-col justify-center pb-1 pt-2 px-1 md:px-40 lg:px-96">
+            <div className="flex flex-col justify-center pb-1 pt-2 px-2 md:px-40 lg:px-96">
                 {contents.map(content => (
                     windowObj &&
-                    <div className='mb-10 bg-[#d1f73f] bg-opacity-5 backdrop-blur-lg drop-shadow-lg rounded' key={content.id}>
+                    <div className='mb-10  bg-[#d1f73f] bg-opacity-5 backdrop-blur-lg drop-shadow-lg rounded' key={content.id}>
                         <div><ReactPlayer url={content.data().url} controls={true} width='100%' light={true}/></div>
-                        <div className="flex justify-end">
-                            <Link href={`/profile/${content?.data().username}`}><span className="font-bold mr-2 text-gray-400 hover:cursor-pointer text-sm mt-4">shared by {content.data().username}</span></Link>
+                        <div className="flex justify-end px-2">
+                            <Link href={`/profile/${content?.data().username}`}><span className="font-bold mr-2 text-gray-400 hover:cursor-pointer text-sm mt-4">shared by <span className='text-gray-500'>{content.data().username}</span></span></Link>
                             {/* <div className="text-sm text-gray-800 font-bold">{timestamp?.toDate().toLocaleDateString()}</div> */}
                         </div>
 
