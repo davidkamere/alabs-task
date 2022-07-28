@@ -105,7 +105,7 @@ function Random () {
             <div className="flex flex-col justify-center pb-1 pt-2 px-1 md:px-40 lg:px-96">
                 {contents.map(content => (
                     windowObj &&
-                    <div className='mb-10' key={content.id}>
+                    <div className='mb-10 bg-[#d1f73f] bg-opacity-5 backdrop-blur-lg drop-shadow-lg rounded' key={content.id}>
                         <div><ReactPlayer url={content.data().url} controls={true} width='100%' light={true}/></div>
                         <div className="flex justify-end">
                             <Link href={`/profile/${content?.data().username}`}><span className="font-bold mr-2 text-gray-400 hover:cursor-pointer text-sm mt-4">shared by {content.data().username}</span></Link>
@@ -149,7 +149,7 @@ function Random () {
                            
                             pl-5
                             rounded-full
-                            bg-[#d1f73f] bg-opacity-5 backdrop-blur-lg drop-shadow-lg
+                            bg-white bg-opacity-5 backdrop-blur-lg drop-shadow-lg
                             transition
                             ease-in-out
                             m-0
