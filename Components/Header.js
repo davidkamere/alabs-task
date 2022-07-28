@@ -96,7 +96,7 @@ const Header = (props) => {
                 display: none;
             }
             .showMenuNav {
-                opacity: 0.99;
+                opacity: 0.999;
                 display: block;
                 position: absolute;
                 width: 100%;
