@@ -139,16 +139,17 @@ function Random () {
                         type="text"
                         className="
                             outline-0
-                            ring-[#e4da30] ring-inset ring-1
+                            ring-[#adda89] ring-inset ring-1
                             block
                             w-full
                             h-14
                            
                             py-1.5
                             text-base
-                            bg-white
+                           
                             pl-5
-                            bg-opacity-10 backdrop-blur-lg rounded-full drop-shadow-lg
+                            rounded-full
+                            bg-[#d1f73f] bg-opacity-5 backdrop-blur-lg drop-shadow-lg
                             transition
                             ease-in-out
                             m-0
