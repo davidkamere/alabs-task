@@ -21,8 +21,8 @@ const Header = (props) => {
         <div className="pt-1 px-6 md:px-8">
             <div className="flex items-center justify-between py-8">
                 {!props.protected ? <div className="flex items-center ">
-                    <Link href="/"><Image src="/floral.ico" width={30} height={30} className="mr-4"/></Link>
-                    <Link href="/"><p className="mt-0.5 font-bold hover:cursor-pointer text-sm text-black tracking-widest"><span className="text-[#e4da30]">P</span>CHA</p></Link>
+                    {/* <Link href="/"><Image src="/floral.ico" width={30} height={30} className="mr-4"/></Link> */}
+                    <Link href="/"><p className="mt-0.5 font-bold hover:cursor-pointer text-sm text-black tracking-widest"><span className="text-[black]">P</span>CHA</p></Link>
                 </div> : <div className="text-slate-500 FONT-BOLD">Welcome, {session?.user?.username}</div>}
 
             <nav className="">
@@ -43,10 +43,10 @@ const Header = (props) => {
                     >
                     <svg
                         className="h-8 w-8 "
-                        viewBox="0 0 24 24"
+                        viewBox="0 0 20 20"
                         fill="none"
                         stroke="currentColor"
-                        strokeWidth="2"
+                        strokeWidth="1"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                     >
@@ -54,7 +54,7 @@ const Header = (props) => {
                         <line x1="6" y1="6" x2="18" y2="18" />
                     </svg>
                     </div>
-                    <ul className="flex flex-col items-center justify-between min-h-[250px] track-wide ">
+                    <ul className="flex flex-col items-center justify-between min-h-[250px] font-semibold ">
                         <li className="mt-0 mb-8 uppercase">
                             <Link href="/">HOME</Link>
                         </li>
@@ -64,8 +64,8 @@ const Header = (props) => {
                         {! props.protected && <li className="my-8 uppercase hover:cursor-pointer">
                             <Link href="/random"><span className="">Random</span></Link>
                         </li>}
-                        <li className="my-8">
-                            <button onClick={signInPage} className="bg-[#C4D668] rounded-full px-4 py-2 shadow-xs font-bold text-black text-sm">SIGN OUT</button>
+                        <li className="mt-28">
+                            <button onClick={signInPage} className="w-36 h-12 bg-white border border-[#adda89] rounded px-4 py-2 shadow-xs font-bold text-black text-sm">SIGN OUT</button>
                         </li>
                     </ul>
                 </div>
@@ -87,7 +87,7 @@ const Header = (props) => {
                         </Link>
                     </li></>} 
                     <li>
-                        <button onClick={signInPage} className="bg-[#C4D668] hover:text-black  hover:bg-lime-50 rounded-full px-4 py-2 shadow-xs font-bold text-white text-sm transition ease-in-out duration-500">SIGN OUT</button>
+                        <button onClick={signInPage} className="bg-gradient-to-r from-[#adda89] to-[#d1f73f] hover:text-black  hover:bg-lime-50 rounded px-4 py-2 shadow-xs font-bold text-white text-sm transition ease-in-out duration-500">SIGN OUT</button>
                     </li>
                 </ul>
             </nav>
@@ -96,13 +96,14 @@ const Header = (props) => {
                 display: none;
             }
             .showMenuNav {
+                opacity: 0.99;
                 display: block;
                 position: absolute;
                 width: 100%;
                 height: 100vh;
                 top: 0;
                 left: 0;
-                background: white;
+                background: #fbfcfa;
                 z-index: 10;
                 display: flex;
                 flex-direction: column;

@@ -15,7 +15,7 @@ const Home = () => {
   }
 
   return (
-    <div className="bg-white text-black min-h-screen">
+    <div className="bg-[#fbfcfa] text-black min-h-screen">
       <Head>
         <title>PCHA</title>
         <link rel="icon" href="/floral.ico" />

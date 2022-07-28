@@ -1,11 +1,16 @@
 import Logo from "../Components/Logo"
 import Header from "../Components/Header"
+import Head from "next/head"
 
 const communities = [{name: "patient zero 💉", id:1}, {name :"90s", id:2}]
 
 const Community = () => {
     return (
         <>
+        <Head>
+            <title>PCHA</title>
+            <link rel="icon" href="/floral.ico" />
+        </Head>
         <Header protected={true}/>
         <div className="flex flex-col justify-center items-center gap-10 mt-20">
             <div>Choose a community to get started:</div>
