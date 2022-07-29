@@ -77,7 +77,7 @@ const Post = ({ id, username, img, caption, timestamp }) => {
     return (
         <div className="my-2">
             <div className="my-4">
-                <Image src={img} width={384} height={500} className="rounded object-fill h-auto w-96 md:w-64 " alt="" />
+                <Image src={img} width={384} height={500} className="rounded object-fill h-auto w-96 lg:w-64 " alt="" />
                 {/* <video className={`object-contain h-68 w-96 ${hidden}`} controls="controls" id="video" onLoad={() => setHidden('')}>
                     <source src={img} type="video/mp4"></source>
                 </video> */}
@@ -87,7 +87,7 @@ const Post = ({ id, username, img, caption, timestamp }) => {
                 </div>}
             </div>
 
-            <div className="md:text-sm md:border-none md:shadow-none rounded">
+            <div className="text-sm md:border-none md:shadow-none rounded">
                 {/* img */}
                 
 
