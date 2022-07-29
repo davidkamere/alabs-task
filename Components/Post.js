@@ -75,19 +75,19 @@ const Post = ({ id, username, img, caption, timestamp }) => {
 
 
     return (
-        <div className="my-7 ">
+        <div className="my-2">
             <div className="my-5 ">
                 <Image src={img} width={384} height={500} className="rounded object-fill h-auto w-72 " alt="" />
                 <video className={`object-contain h-68 w-96 ${hidden}`} controls="controls" id="video" onLoad={() => setHidden('')}>
                     <source src={img} type="video/mp4"></source>
                 </video>
-                {username && <div className="flex justify-between mt-1 px-1">
+                {username && <div className="flex justify-between mt-1">
                     <Link href={`/profile/${username}`}><span className="font-bold mr-2 text-gray-300 hover:cursor-pointer text-sm">{username}</span></Link>
                     <div className="text-sm text-gray-300 font-bold tracking-wide">{timestamp?.toDate().toLocaleDateString()}</div>
                 </div>}
             </div>
 
-            <div className="md:text-sm md:border-none md:shadow-none rounded bg-[#d1f73f] bg-opacity-5 backdrop-blur-lg drop-shadow-lg p-4">
+            <div className="md:text-sm md:border-none md:shadow-none rounded">
                 {/* img */}
                 
 

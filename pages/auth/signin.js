@@ -19,7 +19,7 @@ export default function SignIn({ providers }) {
         <link rel="icon" href="/floral.ico" />
       </Head>
       {/* <Image src={backG} alt="" layout="fill" className="fixed -z-10 min-h-screen"/> */}
-      <div className="flex flex-col items-center jusifty-center py-2 px-14 text-center bg-[#fbfcfa] text-black min-h-screen">
+      <div className="flex flex-col items-center jusifty-center py-2 px-14 text-center text-black min-h-screen">
         <div className="mt-28">
           <Logo/>
           <p className="font-xs italic">Sign in to create, discover and connect with the community.</p>
