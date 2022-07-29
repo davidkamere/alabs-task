@@ -76,11 +76,11 @@ const Post = ({ id, username, img, caption, timestamp }) => {
 
     return (
         <div className="my-2">
-            <div className="my-5 ">
-                <Image src={img} width={384} height={500} className="rounded object-fill h-auto w-72 " alt="" />
-                <video className={`object-contain h-68 w-96 ${hidden}`} controls="controls" id="video" onLoad={() => setHidden('')}>
+            <div className="my-4">
+                <Image src={img} width={384} height={500} className="rounded object-fill h-auto w-96 md:w-64 " alt="" />
+                {/* <video className={`object-contain h-68 w-96 ${hidden}`} controls="controls" id="video" onLoad={() => setHidden('')}>
                     <source src={img} type="video/mp4"></source>
-                </video>
+                </video> */}
                 {username && <div className="flex justify-between mt-1">
                     <Link href={`/profile/${username}`}><span className="font-bold mr-2 text-gray-300 hover:cursor-pointer text-sm">{username}</span></Link>
                     <div className="text-sm text-gray-300 font-bold tracking-wide">{timestamp?.toDate().toLocaleDateString()}</div>
@@ -92,7 +92,7 @@ const Post = ({ id, username, img, caption, timestamp }) => {
                 
 
                 {/* Buttons */}
-                {username && <div className="flex justify-between pt-1 mb-2 md:px-0 ">
+                {username && <div className="flex justify-between pt-2 mb-2 md:px-0 ">
                     <div>
                         {hasLiked ?
                             <HeartIconFilled onClick={likePost} className="h-6 hover:scale-125 curor-pointer transition-all duration-150 ease-out" />
