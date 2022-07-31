@@ -20,7 +20,7 @@ const Posts = () => {
     }, [db])
 
     return( 
-        <div className="flex flex-wrap gap-10 md:p-5 justify-center items-end">
+        <div className="flex flex-wrap gap-5 md:p-5 justify-center items-end">
             {posts.map(post => (
                 <div key={post.id} className="mx-5 md:p-10">
                     <Post  id={post.id} username={post.data().username} img={post.data().image} caption={post.data().caption} timestamp={post.data().timestamp}/>

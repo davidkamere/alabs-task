@@ -22,7 +22,7 @@ const Header = (props) => {
             <div className="flex items-center justify-between py-8">
                 {!props.protected ? <div className="flex items-center ">
                     {/* <Link href="/"><Image src="/floral.ico" width={30} height={30} className="mr-4"/></Link> */}
-                    <Link href="/"><p className="mt-0.5 font-bold hover:cursor-pointer text-sm text-white tracking-widest"><span className="text-white">P</span>CHA</p></Link>
+                    <Link href="/"><p className="mt-0.5 font-bold hover:cursor-pointer text-sm text-black tracking-widest"><span className="">P</span>CHA</p></Link>
                 </div> : <div className="text-slate-500 FONT-BOLD">Welcome, {session?.user?.username}</div>}
 
             <nav className="">
@@ -31,9 +31,9 @@ const Header = (props) => {
                     className="HAMBURGER-ICON space-y-2"
                     onClick={() => setIsNavOpen((prev) => !prev)}
                 >
-                    <span className="block h-0.5 w-7 bg-white"></span>
-                    <span className="block h-0.5 w-7 bg-white"></span>
-                    <span className="block h-0.5 w-7 bg-white"></span>
+                    <span className="block h-0.5 w-7 bg-black"></span>
+                    <span className="block h-0.5 w-7 bg-black"></span>
+                    <span className="block h-0.5 w-7 bg-black"></span>
                 </div>
         
                 <div className={isNavOpen ? "showMenuNav " : "hideMenuNav"}>
@@ -77,13 +77,13 @@ const Header = (props) => {
                     <li>
                         <Link href="/random">
                             <div>
-                                <FilmIcon className="transition ease-in-out duration-100 hover:scale-125 h-8 w-8 py-1 hover:cursor-pointer text-slate-200 hover:text-slate-100"/>
+                                <FilmIcon className="transition ease-in-out duration-100 hover:scale-105 h-8 w-8 py-1 hover:cursor-pointer text-black"/>
                             </div>
                         </Link>
                     </li>
                     <li>
                         <Link href={`/profile/${session?.user?.username}`}>
-                            <UserCircleIcon className="transition translate-x-1 ease-in-out duration-100 hover:scale-125 h-8 w-8 py-1 hover:cursor-pointer text-slate-200 hover:text-slate-100"/>
+                            <UserCircleIcon className="transition translate-x-1 ease-in-out duration-100 hover:scale-105 h-8 w-8 py-1 hover:cursor-pointer text-black "/>
                         </Link>
                     </li></>} 
                     <li>
@@ -103,7 +103,7 @@ const Header = (props) => {
                 height: 100vh;
                 top: 0;
                 left: 0;
-                background: black;
+                background: white;
                 z-index: 10;
                 display: flex;
                 flex-direction: column;
