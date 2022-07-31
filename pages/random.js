@@ -95,7 +95,7 @@ function Random () {
     }
 
     return (
-        <div className='min-h-screen'>
+        <div className='bg-black text-white'>
             <Header />
             <Head>
                 <title>Random | PCHA</title>
@@ -108,7 +108,7 @@ function Random () {
                     <div className='mb-10 ' key={content.id}>
                         <div><ReactPlayer url={content.data().url} controls={true} width='100%' light={true}/></div>
                         <div className="flex justify-end px-2">
-                            <Link href={`/profile/${content?.data().username}`}><span className="font-bold mr-2 text-gray-400 hover:cursor-pointer text-sm mt-4">shared by <span className='text-gray-500'>{content.data().username}</span></span></Link>
+                            <Link href={`/profile/${content?.data().username}`}><span className="font-bold mr-2 text-gray-500 hover:cursor-pointer text-sm mt-4">shared by <span className='text-gray-400'>{content.data().username}</span></span></Link>
                             {/* <div className="text-sm text-gray-800 font-bold">{timestamp?.toDate().toLocaleDateString()}</div> */}
                         </div>
 
@@ -159,7 +159,7 @@ function Random () {
                         placeholder="URL"
                         required
                         />
-                        <button type='submit' className='rounded-full inset-y-0 absolute z-10 bg-gradient-to-r from-[#adda89] to-[#d1f73f] flex items-center px-3 m-1 justify-self-end shadow shadow-[white] ml-4 hover:scale-105'>
+                        <button type='submit' className='rounded-full inset-y-0 absolute z-10 bg-gradient-to-r from-[#adda89] to-[#8dd7d3] flex items-center px-3 m-1 justify-self-end shadow shadow-[white] ml-4 hover:scale-105'>
                             {!loading ? <UploadIcon className='w-6 h-6 text-white'/> :
                             <svg aria-hidden="true" className="w-8 h-8 text-gray-200 animate-spin dark:text-black fill-black" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>

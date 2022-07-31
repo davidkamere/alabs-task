@@ -40,7 +40,7 @@ function Profile (props) {
 
 
     return( 
-        <div className="text-black min-h-screen">
+        <div className="bg-black text-slate-200 min-h-screen">
             <Head>
                 <title>Profile | PCHA</title>
                 <link rel="icon" href="/floral.ico" />

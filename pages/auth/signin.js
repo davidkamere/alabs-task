@@ -13,13 +13,13 @@ export default function SignIn({ providers }) {
   }
 
   return (
-    <>
+    <div className="bg-black text-white">
       <Head>
         <title>PCHA</title>
         <link rel="icon" href="/floral.ico" />
       </Head>
       {/* <Image src={backG} alt="" layout="fill" className="fixed -z-10 min-h-screen"/> */}
-      <div className="flex flex-col items-center jusifty-center py-2 px-14 text-center text-black min-h-screen">
+      <div className="flex flex-col items-center jusifty-center py-2 px-14 text-center min-h-screen">
         <div className="mt-28">
           <Logo/>
           <p className="font-xs italic">Sign in to create, discover and connect with the community.</p>
@@ -30,7 +30,7 @@ export default function SignIn({ providers }) {
         <div className="mt-20">
           {Object.values(providers).map((provider) => (
             <div key={provider.name}>
-              <button className="transition ease-in-out duration-500 rounded px-6 py-4 bg-gradient-to-r from-[#adda89] to-[#d1f73f] shadow hover:text-white font-bold text-black bg-white shadow-[#C4D668]"
+              <button className="transition ease-in-out duration-500 rounded px-6 py-4 bg-gradient-to-r from-[#adda89] to-[#8dd7d3] shadow hover:text-white font-bold text-black bg-white shadow-[#C4D668]"
                       onClick={() => signIntoProvider(provider.id, {callbackUrl: '/'})}
               >
                 Sign in with {provider.name}
@@ -39,7 +39,7 @@ export default function SignIn({ providers }) {
           ))}
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
