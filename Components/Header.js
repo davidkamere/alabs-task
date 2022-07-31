@@ -83,11 +83,11 @@ const Header = (props) => {
                     </li>
                     <li>
                         <Link href={`/profile/${session?.user?.username}`}>
-                            <UserCircleIcon className="transition ease-in-out duration-100 hover:scale-125 h-8 w-8 py-1 hover:cursor-pointer text-slate-200 hover:text-slate-100"/>
+                            <UserCircleIcon className="transition translate-x-1 ease-in-out duration-100 hover:scale-125 h-8 w-8 py-1 hover:cursor-pointer text-slate-200 hover:text-slate-100"/>
                         </Link>
                     </li></>} 
                     <li>
-                        <button onClick={signInPage} className="bg-gradient-to-r from-[#adda89] to-[#8dd7d3] hover:text-black  hover:bg-lime-50 rounded px-4 py-2 shadow-xs font-bold text-white text-sm transition ease-in-out duration-500">SIGN OUT</button>
+                        <button onClick={signInPage} className="bg-gradient-to-r from-[#adda89] to-[#8dd7d3] hover:text-black  hover:bg-lime-50 rounded px-4 py-2 shadow-xs font-bold text-black text-sm transition ease-in-out duration-500">SIGN OUT</button>
                     </li>
                 </ul>
             </nav>
