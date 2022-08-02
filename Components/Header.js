@@ -87,7 +87,7 @@ const Header = (props) => {
                         </Link>
                     </li></>} 
                     <li>
-                        <button onClick={signInPage} className="bg-gradient-to-r from-[#adda89] to-[#8dd7d3] hover:text-black  hover:bg-lime-50 rounded px-4 py-2 shadow-xs font-bold text-black text-sm transition ease-in-out duration-500">SIGN OUT</button>
+                        <button onClick={signInPage} className="bg-gradient-to-r from-[#ddd37a] to-[#01a280] hover:text-black  hover:bg-lime-50 rounded px-4 py-2 shadow-xs font-bold text-black text-sm transition ease-in-out duration-500">SIGN OUT</button>
                     </li>
                 </ul>
             </nav>

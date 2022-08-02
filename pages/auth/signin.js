@@ -30,7 +30,7 @@ export default function SignIn({ providers }) {
         <div className="mt-20">
           {Object.values(providers).map((provider) => (
             <div key={provider.name}>
-              <button className="transition ease-in-out duration-500 rounded px-6 py-4 bg-gradient-to-r from-[#adda89] to-[#8dd7d3] shadow hover:text-white font-bold text-black bg-white shadow-[#C4D668]"
+              <button className="transition ease-in-out duration-500 rounded px-6 py-4 bg-gradient-to-r from-[#ddd37a] to-[#01a280] shadow hover:text-white font-bold text-black bg-white shadow-[#C4D668]"
                       onClick={() => signIntoProvider(provider.id, {callbackUrl: '/'})}
               >
                 Sign in with {provider.name}
