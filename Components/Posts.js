@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import Post from './Post'
-import { collection, onSnapshot, orderBy, query } from 'firebase/firestore'
+import { collection, onSnapshot, orderBy, query, where } from 'firebase/firestore'
 import { db } from '../firebase'
 
 
@@ -13,6 +13,7 @@ const Posts = () => {
         return onSnapshot(
             query(
                 collection(db, "posts"),
+                // where("community", "==", "90s"),
                 orderBy('timestamp', 'desc')
             ),
             snapshot => {setPosts(snapshot.docs)}
