@@ -76,7 +76,8 @@ const Post = ({ id, username, img, caption, timestamp }) => {
 
     return (
         <div className="">
-            <div className="my-4 p-3">
+            <div className="my-4 p-3 bg-white">
+                {/* img */}
                 <Image src={img} width={384} height={500} className="object-fill h-auto w-96 lg:w-64 " alt="" />
                 {/* <video className={`object-contain h-68 w-96 ${hidden}`} controls="controls" id="video" onLoad={() => setHidden('')}>
                     <source src={img} type="video/mp4"></source>
@@ -94,7 +95,7 @@ const Post = ({ id, username, img, caption, timestamp }) => {
                 {username && <div className="flex justify-between pt-2 mb-2 md:px-0 ">
                     <div>
                         {hasLiked ?
-                            <HeartIconFilled onClick={likePost} className="h-6 hover:scale-125 curor-pointer transition-all duration-150 ease-out" />
+                            <HeartIconFilled onClick={likePost} className="h-6 hover:scale-125 curor-pointer transition-all duration-150 ease-out " />
                             :
                             <HeartIcon onClick={likePost} className="h-6 hover:scale-125 curor-pointer transition-all duration-150 ease-out" />
                         }
@@ -108,7 +109,7 @@ const Post = ({ id, username, img, caption, timestamp }) => {
             </div>
 
             <div className="text-sm md:border-none md:shadow-none ">
-                {/* img */}
+               
                 
 
                 
