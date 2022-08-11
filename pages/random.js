@@ -106,7 +106,7 @@ function Random () {
                 {contents.map(content => (
                     windowObj &&
                     <div className='mb-10 ' key={content.id}>
-                        <div><ReactPlayer url={content.data().url} controls={true} width='100%' light={true}/></div>
+                        <div><ReactPlayer url={content.data().url} controls={true} width='100%'/></div>
                         <div className="flex justify-end px-2">
                             <Link href={`/profile/${content?.data().username}`}><span className="font-bold mr-2 text-gray-400 hover:cursor-pointer text-sm mt-4">shared by <span className='text-gray-500'>{content.data().username}</span></span></Link>
                             {/* <div className="text-sm text-gray-800 font-bold">{timestamp?.toDate().toLocaleDateString()}</div> */}

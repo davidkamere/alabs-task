@@ -1,24 +1,24 @@
-import { ChatIcon, HeartIcon } from "@heroicons/react/outline"
-import { useRouter } from "next/router"
+import { HeartIcon } from "@heroicons/react/outline"
 import { HeartIcon as HeartIconFilled } from "@heroicons/react/solid"
-import { addDoc, deleteDoc, doc, serverTimestamp, setDoc } from "firebase/firestore"
+import { deleteDoc, doc, setDoc } from "firebase/firestore"
 import { useEffect, useRef, useState } from "react"
 import { collection, onSnapshot, orderBy, query } from 'firebase/firestore'
 import { db } from '../firebase'
-import Moment from "react-moment"
 import { useSession } from "next-auth/react"
 import Image from "next/future/image"
 import Link from 'next/link'
+import { prominent } from 'color.js'
+import rgbHex from 'rgb-hex';
 
 // component for a single post
 const Post = ({ id, username, img, caption, timestamp }) => {
     const { data: session } = useSession()
-    const addComment = useRef(null)
-    const [comment, setComment] = useState('')
+    // const addComment = useRef(null)
+    // const [comment, setComment] = useState('')
     const [comments, setComments] = useState([])
     const [likes, setLikes] = useState([])
     const [hasLiked, setHasLiked] = useState(false)
-    const [hidden, setHidden] = useState('hidden')
+
 
     useEffect(() => {
         return onSnapshot(
@@ -54,24 +54,29 @@ const Post = ({ id, username, img, caption, timestamp }) => {
 
     }
 
-
-
-    const sendComment = async (e) => {
-        e.preventDefault()
-
-        const commentToSend = comment;
-        setComment('')
-
-        await addDoc(collection(db, 'posts', id, 'comments'), {
-            comment: commentToSend,
-            username: session.user.username,
-            timestamp: serverTimestamp()
-        })
+    const getColor = async (img) => {
+        const color = await prominent(img, { amount: 3 }, { format: 'hex' })
+        console.log(color)
     }
 
-    const focusComment = () => {
-        addComment.current.focus()
-    }
+
+
+    // const sendComment = async (e) => {
+    //     e.preventDefault()
+
+    //     const commentToSend = comment;
+    //     setComment('')
+
+    //     await addDoc(collection(db, 'posts', id, 'comments'), {
+    //         comment: commentToSend,
+    //         username: session.user.username,
+    //         timestamp: serverTimestamp()
+    //     })
+    // }
+
+    // const focusComment = () => {
+    //     addComment.current.focus()
+    // }
 
 
     return (
