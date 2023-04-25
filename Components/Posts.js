@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import Post from './Post'
 import { collection, onSnapshot, orderBy, query, where } from 'firebase/firestore'
 import { db } from '../firebase'
-
+import Search from './Search'
 
 // Renders all the posts
 const Posts = () => {
@@ -20,7 +20,16 @@ const Posts = () => {
         )
     }, [db])
 
-    return( 
+    return(
+        <>
+
+        {/* Search Bar */}
+
+        <div className="flex justify-center">
+            <Search  />
+        </div> 
+
+
         <div className="flex flex-wrap gap-5 md:p-5 justify-center items-end">
             {posts.map(post => (
                 <div key={post.id} className="mx-5 md:p-10">
@@ -29,6 +38,7 @@ const Posts = () => {
             ))}
            
         </div>
+        </>
     )
 }
 

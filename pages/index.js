@@ -4,6 +4,7 @@ import Feed from "../Components/Feed";
 import Footer from "../Components/Footer";
 import Modal from "../Components/Modal";
 import Loading from "../Components/Loading";
+
 import { useSession } from "next-auth/react";
 
 const Home = () => {
@@ -14,6 +15,8 @@ const Home = () => {
   }
 
   return (
+    
+
     <div className="bg-white text-black min-h-screen">
       <Head>
         <title>PCHA</title>
@@ -23,6 +26,8 @@ const Home = () => {
       {/* Header with Log out  */}
 
       {session && <Header />}
+
+      
 
       {/* Feed */}
 
