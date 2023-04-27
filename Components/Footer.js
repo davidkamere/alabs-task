@@ -10,7 +10,7 @@ const Footer = () => {
                 <PlusIcon  className="h-7 cursor-pointer transition-all duration-150 ease-out text-[#01a280]"/>
                 
             </div>
-            <p className="mb-1.5 p-0 tracking-wide">New</p>
+            <p className="mb-1.5 p-0 tracking-wide"  onClick={() => setOpen(true)}>New</p>
         </div>
     )
 }

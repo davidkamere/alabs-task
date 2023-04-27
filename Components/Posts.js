@@ -1,45 +1,47 @@
-import { useEffect, useState } from 'react'
-import Post from './Post'
-import { collection, onSnapshot, orderBy, query, where } from 'firebase/firestore'
-import { db } from '../firebase'
-import Search from './Search'
+import { useState, useEffect } from 'react';
+import { collection, query, where, orderBy, onSnapshot } from 'firebase/firestore';
+import { db } from '../firebase';
+import Post from './Post';
+import Search from './Search';
 
-// Renders all the posts
 const Posts = () => {
-    const [posts, setPosts] = useState([])
+    const [posts, setPosts] = useState([]);
+    const [search, setSearch] = useState('');
 
-    useEffect(() =>
-    {
-        return onSnapshot(
-            query(
-                collection(db, "posts"),
-                // where("community", "==", "90s"),
-                orderBy('timestamp', 'desc')
-            ),
-            snapshot => {setPosts(snapshot.docs)}
-        )
-    }, [db])
+    useEffect(() => {
+        const postsCollection = collection(db, "posts");
+        const q = query(
+          postsCollection,
+          search ? where('caption', '==', search) : orderBy('timestamp', 'desc')
+        );
+        return onSnapshot(q, (snapshot) => {
+          setPosts(snapshot.docs);
+        });
+    }, [db, search]);
 
-    return(
+
+    console.log(search)
+
+    return (
         <>
-
-        {/* Search Bar */}
-
         <div className="flex justify-center">
-            <Search  />
-        </div> 
-
-
+            <Search search={search} setSearch={setSearch} />
+        </div>
         <div className="flex flex-wrap gap-5 md:p-5 justify-center items-end">
-            {posts.map(post => (
-                <div key={post.id} className="mx-5 md:p-10">
-                    <Post  id={post.id} username={post.data().username} img={post.data().image} caption={post.data().caption} timestamp={post.data().timestamp}/>
-                </div>
+            {posts.map((post) => (
+            <div key={post.id} className="mx-5 md:p-10">
+                <Post
+                id={post.id}
+                username={post.data().username}
+                img={post.data().image}
+                caption={post.data().caption}
+                timestamp={post.data().timestamp}
+                />
+            </div>
             ))}
-           
         </div>
         </>
-    )
-}
+    );
+};
 
-export default Posts
+export default Posts;
