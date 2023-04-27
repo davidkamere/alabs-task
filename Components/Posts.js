@@ -10,17 +10,16 @@ const Posts = () => {
 
     useEffect(() => {
         const postsCollection = collection(db, "posts");
+
         const q = query(
           postsCollection,
-          search ? where('caption', '==', search) : orderBy('timestamp', 'desc')
+          search ? where('caption', '>=', search) : orderBy('timestamp', 'desc')
         );
         return onSnapshot(q, (snapshot) => {
           setPosts(snapshot.docs);
         });
     }, [db, search]);
 
-
-    console.log(search)
 
     return (
         <>
