@@ -61,22 +61,22 @@ const Post = ({ id, username, img, caption, timestamp }) => {
 
 
 
-    // const sendComment = async (e) => {
-    //     e.preventDefault()
+    const sendComment = async (e) => {
+        e.preventDefault()
 
-    //     const commentToSend = comment;
-    //     setComment('')
+        const commentToSend = comment;
+        setComment('')
 
-    //     await addDoc(collection(db, 'posts', id, 'comments'), {
-    //         comment: commentToSend,
-    //         username: session.user.username,
-    //         timestamp: serverTimestamp()
-    //     })
-    // }
+        await addDoc(collection(db, 'posts', id, 'comments'), {
+            comment: commentToSend,
+            username: session.user.username,
+            timestamp: serverTimestamp()
+        })
+    }
 
-    // const focusComment = () => {
-    //     addComment.current.focus()
-    // }
+    const focusComment = () => {
+        addComment.current.focus()
+    }
 
 
     return (
@@ -122,7 +122,7 @@ const Post = ({ id, username, img, caption, timestamp }) => {
                 
                 
                 {/* Comments */}
-                {/* {comments.length > 0 && (
+                {comments.length > 0 && (
                     <div className="ml-5 h-14 overflow-y-scroll scrollbar-hide">
                         {comments.map((comment) => (
                             <div key={comment.id} className="flex items-center">
@@ -136,10 +136,10 @@ const Post = ({ id, username, img, caption, timestamp }) => {
                             </div>
                         ))}
                     </div>
-                )} */}
+                )} 
 
                 {/* Input Box */}
-                {/* <form className="flex items-center p-2 ">
+                <form className="flex items-center p-2 ">
                     <input
                         type="text"
                         ref={addComment}
@@ -152,7 +152,7 @@ const Post = ({ id, username, img, caption, timestamp }) => {
                         type='submit'
                         onClick={sendComment}
                         className="font-semibold text-[#336934] mr-3 hover:text-white">Post</button>
-                </form> */}
+                </form>
             </div>
         </div>
     )
